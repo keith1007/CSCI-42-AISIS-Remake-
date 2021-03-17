@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #FFF;
+}
+
+.main-navbar {
+    width: 100%;
+    height: 4%;
+    background: #EBE7E7;
+    
+}
+
+.navflex {
+    display: flex;
+}
+
+.main-header {
+    width: 100%;
+    height: 16%;
+    background: #223F89;
+}
+
+.p-officialtime{
+    text-align: left;
+}
+
+.p-enlistmentstart{
+    text-align: center;
+}
+
+.contactus{
+    text-align: right;
+}
