@@ -13,7 +13,7 @@
 <body>
     
     <!-- The Thin Grey Line -->
-    <nav class = "main-navbar">
+    <nav class = "main-navbar" id = "top">
         <div class = "navflex"> 
             <p id = "p-officialtime"> <b>Official Time</b> | PST March 17, 2021 17:14:28</p>
             <p id = "p-enlistmentstarts"> Online enlistment starts on <b>July 2,2021</b> </p>
@@ -53,5 +53,155 @@
     </header> 
 
     <!-- This is where the template ends, below are the specifics per page :) -->
+    <!--Will add the FAQ Main Container Below-->
+
+    <div class="FAQContainer">
+        
+        <!-- Section 1 Getting Started-->
+        <h1 class = "FAQHeaders">Getting Started</h1>
+        <div class = "FAQButtonsFlex">
+            <div class="perFAQflex">
+                <button type="button" class="collapsible"></button>
+                <h4 class = "FAQQuestions"> Charting a Re-imagined Path: Adaptive Teaching and Learning in the Loyola Schools 2020-2021 </h4>
+            </div>
+            <div class="hiddencontent">
+                <p>We don't know the actual answer to this 😅</p>
+            </div>
+            
+            <div class="perFAQflex">
+                <button type="button" class="collapsible"></button>
+                <h4 class = "FAQQuestions"> Code of Academic Integrity </h4>
+            </div>
+            <div class="hiddencontent">
+                <p>We don't know the actual answer to this 😅</p>
+            </div>
+
+            <div class="perFAQflex">
+                <button type="button" class="collapsible"></button>
+                <h4 class = "FAQQuestions"> Undergraduate Student Handbook 2018 Edition </h4>
+            </div>
+            <div class="hiddencontent">
+                <p>We don't know the actual answer to this 😅</p>
+            </div>
+
+            <div class="perFAQflex">
+                <button type="button" class="collapsible"></button>
+                <h4 class = "FAQQuestions"> AISIS Online FAQs </h4>
+            </div>
+            <div class="hiddencontent">
+                <p>We don't know the actual answer to this 😅</p>
+            </div>
+        </div>
+
+        <!-- Section 2 Online Enlistment-->
+        <h1 class = "FAQHeaders">Online Enlistment</h1>
+        <div class = "FAQButtonsFlex">
+            <div class="perFAQflex">
+                <button type="button" class="collapsible"></button>
+                <h4 class = "FAQQuestions"> How to Enlist Online </h4>
+            </div>
+            <div class="hiddencontent">
+                <p>We don't know the actual answer to this 😅</p>
+            </div>
+            
+            <div class="perFAQflex">
+                <button type="button" class="collapsible"></button>
+                <h4 class = "FAQQuestions"> Loyola Schools Directory </h4>
+            </div>
+            <div class="hiddencontent">
+                <p>We don't know the actual answer to this 😅</p>
+            </div>
+
+            <div class="perFAQflex">
+                <button type="button" class="collapsible"></button>
+                <h4 class = "FAQQuestions"> RegCom: Procedures, Batching Schedule, & FAQs </h4>
+            </div>
+            <div class="hiddencontent">
+                <p>We don't know the actual answer to this 😅</p>
+            </div>
+
+            <div class="perFAQflex">
+                <button type="button" class="collapsible"></button>
+                <h4 class = "FAQQuestions"> Online Enlistment Guidelines </h4>
+            </div>
+            <div class="hiddencontent">
+                <p>We don't know the actual answer to this 😅</p>
+            </div>
+        </div>
+
+        <!-- Section 3 Online Assessment-->
+        <h1 class = "FAQHeaders">Online Assessment</h1>
+        <div class = "FAQButtonsFlex">
+            <div class="perFAQflex">
+                <button type="button" class="collapsible"></button>
+                <h4 class = "FAQQuestions"> Print your Assessment Forms at Home </h4>
+            </div>
+            <div class="hiddencontent">
+                <p>We don't know the actual answer to this 😅</p>
+            </div>
+        </div>
+
+        <!-- Section 4 Payment-->
+        <h1 class = "FAQHeaders">Payment</h1>
+        <div class = "FAQButtonsFlex">
+            <div class="perFAQflex">
+                <button type="button" class="collapsible"></button>
+                <h4 class = "FAQQuestions"> Tuition Payment Options for Interssion SY 2020-2021 </h4>
+            </div>
+            <div class="hiddencontent">
+                <p>We don't know the actual answer to this 😅</p>
+            </div>
+        </div>
+
+        <!-- Section 5 Other Links-->
+        <h1 class = "FAQHeaders">Other Links</h1>
+        <div class = "FAQButtonsFlex">
+            <div class="perFAQflex">
+                <button type="button" class="collapsible"></button>
+                <h4 class = "FAQQuestions"> Moodle </h4>
+            </div>
+            <div class="hiddencontent">
+                <p>We don't know the actual answer to this 😅</p>
+            </div>
+
+            <div class="perFAQflex">
+                <button type="button" class="collapsible"></button>
+                <h4 class = "FAQQuestions"> Ateneo Website </h4>
+            </div>
+            <div class="hiddencontent">
+                <p>We don't know the actual answer to this 😅</p>
+            </div>
+        </div>
+
+        <!--Copyright & Navigation Triangles-->
+        <p class = "bottom-copyright" id = "bottom"> (c) Copyright 2006 Ateneo Integrated Student Information System. Ateneo de Manila University. All Rights Reserved.</p>
+        
+       <a href="#top"> 
+            <div class="triangle-up"></div>
+       </a>     
+
+       <a href="#bottom"> 
+            <div class="triangle-down"></div>
+        </a>     
+    </div>
+    
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+        
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            /* alert("Luh bat mo naclick yan"); */
+            this.classList.toggle("active");
+            var hiddencontent = this.parentElement.nextElementSibling;
+            if (hiddencontent.style.display === "block") {
+                hiddencontent.style.display = "none";
+            } else {
+                hiddencontent.style.display = "block";
+            }
+          });
+        }
+    </script>
+
 </body>
 </html>
