@@ -70,3 +70,25 @@
     padding-top: 45px;
 }
 /* the Triangle Buttons naman*/
+
+.triangle-up{
+    width: 0;
+	height: 0;
+	border-left: 40px solid transparent;
+	border-right: 40px solid transparent;
+	border-bottom: 60px solid #223F89;
+    position: fixed;
+    bottom: 90px;
+    right: 30px;
+}
+
+.triangle-down{
+    width: 0;
+	height: 0;
+	border-left: 40px solid transparent;
+	border-right: 40px solid transparent;
+	border-top: 60px solid #223F89;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+}
