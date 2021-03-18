@@ -1,4 +1,61 @@
+/*FAQ Container CSS*/
+
 #FAQbutton{
     color: white;
     background-color: #223F89; 
 }
+
+.FAQContainer{
+    height: 72%;
+    box-sizing: border-box;
+    padding: 0 0 0 210px;
+    margin-top: 30px;
+}
+
+.FAQHeaders{
+    font-size: 40px;
+    color:  #223F89;
+    margin: 10px 0 10px 0;
+}
+
+.collapsible {
+    background-color: #223F89;
+    cursor: pointer;
+    padding: 18px;
+    width: 3%;
+    border: none;
+    outline: none;
+    margin: 10px 0 10px 0;
+  }
+  
+  .active, .collapsible:hover {
+    background-color: #449DD1;
+  }
+
+.hiddencontent{
+    width: 60%;
+    box-sizing: border-box;
+    padding: 0 10px;
+    display: none;
+    overflow: hidden;
+    background-color: white;
+    margin: 0 0 10px 4%;
+}
+
+.FAQButtonsFlex{
+    display: flex;
+    flex-direction: column; 
+}
+
+.perFAQflex{
+    display: flex;
+    flex-direction: row; 
+}
+
+.FAQQuestions{
+    padding: 15px 0 0 15px;
+    color: #1841AA;
+    box-sizing: border-box;
+}
+
+/* the Triangle Buttons naman*/
