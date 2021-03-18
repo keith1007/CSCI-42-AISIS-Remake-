@@ -8,7 +8,7 @@
 .FAQContainer{
     height: 72%;
     box-sizing: border-box;
-    padding: 0 0 0 210px;
+    padding: 0 210px 0 210px;
     margin-top: 30px;
 }
 
@@ -58,4 +58,15 @@
     box-sizing: border-box;
 }
 
+.bottom-copyright{
+    width: 100%;
+    height: 20%;
+    background-color: #EBE7E7;
+    color: #898787;
+    text-align: center;
+    box-sizing: border-box;
+    font-size: 10px;
+    margin-top: 20px;
+    padding-top: 45px;
+}
 /* the Triangle Buttons naman*/
