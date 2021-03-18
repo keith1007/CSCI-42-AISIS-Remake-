@@ -2,3 +2,86 @@
     color: white;
     background-color: #223F89; 
 }
+
+.announcepage{
+    margin-bottom: 2rem;
+}
+
+/* Container of the page */
+.AnnounceContainer{
+    height: 72%;
+    box-sizing: border-box;
+    padding: 0 210px 0 210px;
+    margin-top: 30px;
+}
+
+/* For the unordered list properties */
+ul {
+    padding: 0;
+    margin: 50px 20px;
+    list-style: none;
+}
+
+ul li {
+    margin: 5px;
+    display: block;
+    margin-bottom: 20px;
+     
+}
+
+/* Card or container of the announcement/s content */
+.card {
+    padding: 5px;
+    display: flex;      
+    border: 1px solid #f2f2f2;
+    border-radius: 5px;
+    color: white;
+    transition: 0.4s;
+    background: rgba(37, 68, 148, 0.91);
+}
+
+.card:hover {
+    transform: scale(1.1);
+    transition: 0.4s;
+    box-shadow: 0 0 8px rgba(0,0,0, 1);
+    background: rgba(34,63,137, 1)
+}
+
+/* Components inside the container */
+.announceheader {
+    text-align: left;
+    color: white;
+    font-size: 18px;
+}
+
+.date {
+    text-align: left;
+    font-size: 16.5px;
+}
+.content {
+    padding-left: 15px;
+    color: white;
+}
+
+/* the Triangle Buttons naman*/
+.triangle-up{
+    width: 0;
+	height: 0;
+	border-left: 40px solid transparent;
+	border-right: 40px solid transparent;
+	border-bottom: 60px solid rgb(37, 68, 148);
+    position: fixed;
+    bottom: 90px;
+    right: 30px;
+}
+
+.triangle-down{
+    width: 0;
+	height: 0;
+	border-left: 40px solid transparent;
+	border-right: 40px solid transparent;
+	border-top: 60px solid #223F89;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+}
