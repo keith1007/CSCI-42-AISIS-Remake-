@@ -6,7 +6,7 @@
 /* Top 4 Buttons */
 .top4buttons{
     text-decoration: none;
-    color: #223F89;
+    color: rgb(34, 63, 137);
     font-size: 20px;
     margin: 30px 40px 0 40px;
     padding: 5px;
@@ -16,12 +16,131 @@
 .top4buttons:hover {
     text-decoration: none;
     color: white;
-    background-color: #223F89;
+    background-color: rgb(34, 63, 137);
     transition: 0.3s;
 }
 
 .top4buttons:active{
     color: white;
     transition: 0.3s;
-    background-color: #223F89; 
+    background-color: rgb(34, 63, 137); 
+}
+
+/* Enlistment Updates Page Features */
+.EnlistContainer{
+    height: 72%;
+    box-sizing: border-box;
+    padding: 0 210px 0 210px;
+    margin-top: 30px;
+}
+
+.EnlistHeaders {
+    font-size: 30px;
+    color:  rgb(34, 63, 137);
+    margin: 10px 0 10px 0;
+}
+
+.EnlistDate {
+    font-size: 19px;
+    color: rgb(34, 63, 137);
+    margin: 10px 0 10px 0;
+}
+
+.collapsible {
+    background-color: rgba(34, 63, 137, 0.9);
+    cursor: pointer;
+    padding: 18px;
+    width: 3%;
+    border: none;
+    outline: none;
+    margin: 10px 0 10px 0;
+    border-radius: 5px;
+    transition: 0.4s;
+  }
+  
+  .active, .collapsible:hover {
+    background-color: rgb(25, 48, 105, 1);
+    transform: scale(0.9);
+    border-radius: 15px;
+    transition: 0.4s;
+  }
+
+.hiddencontent{
+    width: 60%;
+    box-sizing: border-box;
+    padding: 0 10px;
+    display: none;
+    overflow: hidden;
+    background-color: white;
+    margin: 0 0 10px 4%;
+    transition: 0.7s;
+}
+
+.EnlistButtonsFlex{
+    display: flex;
+    flex-direction: column; 
+}
+
+.perEnlistflex{
+    display: flex;
+    flex-direction: row; 
+}
+
+.EnlistCaption{
+    padding: 18px 0 0 15px;
+    color: #1841AA;
+    box-sizing: border-box;
+}
+
+.bottom-copyright{
+    width: 100%;
+    height: 20%;
+    background-color: #EBE7E7;
+    color: #898787;
+    text-align: center;
+    box-sizing: border-box;
+    font-size: 10px;
+    margin-top: 100px;
+    padding-top: 45px;
+    bottom: 0;
+}
+
+
+/* the Triangle Buttons naman*/
+
+.triangle-down{
+    width: 0;
+	height: 0;
+	border-left: 40px solid transparent;
+	border-right: 40px solid transparent;
+	border-top: 60px solid rgb(37, 68, 148);
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    transition: 0.2s;
+}
+
+.triangle-down:hover {
+    transform: scale(0.9);
+    transition: 0.3s;
+    border-bottom: rgba(34,63,137, 1);
+}
+
+
+.triangle-up{
+    width: 0;
+	height: 0;
+    border-bottom: 60px solid rgb(37, 68, 148);
+	border-left: 40px solid transparent;
+	border-right: 40px solid transparent;
+    position: fixed;
+    bottom: 90px;
+    right: 30px;
+    transition: 0.2s;
+}
+
+.triangle-up:hover {
+    transform: scale(0.9);
+    transition: 0.3s;
+    border-top: rgba(34,63,137, 1);
 }

@@ -5,6 +5,29 @@
     background-color: #223F89; 
 }
 
+/* Top 4 Buttons */
+.top4buttons{
+    text-decoration: none;
+    color: #223F89;
+    font-size: 20px;
+    margin: 30px 40px 0 40px;
+    padding: 5px;
+    transition: 0.3s;
+}
+
+.top4buttons:hover {
+    text-decoration: none;
+    color: white;
+    background-color: #223F89;
+    transition: 0.3s;
+}
+
+.top4buttons:active{
+    color: white;
+    transition: 0.3s;
+    background-color: #223F89; 
+}
+
 .FAQContainer{
     height: 72%;
     box-sizing: border-box;
@@ -19,17 +42,22 @@
 }
 
 .collapsible {
-    background-color: #223F89;
+    background-color: rgba(34, 63, 137, 0.9);
     cursor: pointer;
     padding: 18px;
     width: 3%;
     border: none;
     outline: none;
     margin: 10px 0 10px 0;
+    border-radius: 5px;
+    transition: 0.4s;
   }
   
   .active, .collapsible:hover {
-    background-color: #449DD1;
+    background-color: rgb(25, 48, 105, 1);
+    transform: scale(0.9);
+    border-radius: 15px;
+    transition: 0.4s;
   }
 
 .hiddencontent{
@@ -53,7 +81,7 @@
 }
 
 .FAQQuestions{
-    padding: 15px 0 0 15px;
+    padding: 18px 0 0 15px;
     color: #1841AA;
     box-sizing: border-box;
 }
@@ -91,27 +119,4 @@
     position: fixed;
     bottom: 20px;
     right: 30px;
-}
-
-/* Top 4 Buttons */
-.top4buttons{
-    text-decoration: none;
-    color: #223F89;
-    font-size: 20px;
-    margin: 30px 40px 0 40px;
-    padding: 5px;
-    transition: 0.3s;
-}
-
-.top4buttons:hover {
-    text-decoration: none;
-    color: white;
-    background-color: #223F89;
-    transition: 0.3s;
-}
-
-.top4buttons:active{
-    color: white;
-    transition: 0.3s;
-    background-color: #223F89; 
 }
