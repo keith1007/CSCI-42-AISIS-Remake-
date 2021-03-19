@@ -53,6 +53,66 @@
     </header> 
 
     <!-- This is where the template ends, below are the specifics per page :) -->
+    <div class="EnlistContainer">
+        
+        <!-- Update 1 -->
+        <h1 class = "EnlistHeaders"> List of Interdisciplinary Electives (IE) Course 
+            Offerings for First Semester SY 2020-2021</h1>
+            <p class = "EnlistDate"> Posted: August 24,2020 </p>
+        <div class = "EnlistButtonsFlex">
+            <div class="perEnlistflex">
+                <button type="button" class="collapsible"></button>
+                <h4 class = "EnlistCaption"> PDF File </h4>
+            </div>
+            <div class="hiddencontent">
+                <p>We don't know the actual answer to this 😅</p>
+            </div>
+        </div>
 
+    </br>
+    </br>
+        <!-- Update 2 -->
+        <h1 class = "EnlistHeaders"> Registration Schedule and Start of Classes for the First Semester, School Year 2020-2021</h1>
+        <p class = "EnlistDate"> Posted: August 20,2020 </p>
+        <div class = "EnlistButtonsFlex">
+            <div class="perEnlistflex">
+                <button type="button" class="collapsible"></button>
+                <h4 class = "EnlistCaption"> Click here to view the memo </h4>
+            </div>
+            <div class="hiddencontent">
+                <p>We don't know the actual answer to this 😅</p>
+            </div>
+        </div>
+
+        <!--Copyright & Navigation Triangles-->
+        <p class = "bottom-copyright" id = "bottom"> (c) Copyright 2006 Ateneo Integrated Student Information System. Ateneo de Manila University. All Rights Reserved.</p>
+        
+       <a href="#top"> 
+            <div class="triangle-up"></div>
+       </a>     
+
+       <a href="#bottom"> 
+            <div class="triangle-down"></div>
+        </a>     
+        </div>
+    </div>
+    
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+        
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            /* alert("Luh bat mo naclick yan"); */
+            this.classList.toggle("active");
+            var hiddencontent = this.parentElement.nextElementSibling;
+            if (hiddencontent.style.display === "block") {
+                hiddencontent.style.display = "none";
+            } else {
+                hiddencontent.style.display = "block";
+            }
+          });
+        }
+    </script>
 </body>
 </html>
