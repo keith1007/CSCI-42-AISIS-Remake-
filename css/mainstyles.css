@@ -1,0 +1,135 @@
+/*Whole Body CSS*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #FFF;
+    font-family: 'Roboto';
+}
+
+/* CSS for the Thin Grey Line */
+.main-navbar {
+    width: 100%;
+    height: 4%;
+    background: #EBE7E7; 
+}
+
+.navflex {
+    display: flex;
+    align-items: center;
+}
+
+#p-officialtime{
+    width: 100%;
+    margin: 5px 0 0 20px;
+    text-align: left;
+}
+
+#p-enlistmentstarts{
+    width: 100%;
+    margin: 5px 0 0 0;
+    text-align: center;
+}
+
+#contactus{
+    width: 100%;
+    margin: 5px 50px 0 0;
+    text-align: right;
+    text-decoration: none;
+    color: black;
+}
+/* Thicc Blue Strip */
+.main-header {
+    width: 100%;
+    height: 16%;
+    background: #223F89;
+}
+
+.headerflex{
+    display: flex;
+    align-items: center;
+}
+
+#admulogo {
+    width: 5.5%;
+    height: 5.5%; 
+    padding: 20px 0 0 20px;
+}
+
+#aisislogo {
+    width: 26%;
+    height: 26%; 
+    padding: 20px 0 0 10px;
+}
+
+.signout{
+    display:flex;
+    width: 30%;
+}
+
+.signout>a{
+    font-size: 24px;
+    padding: 5px;
+    text-decoration: none;
+    background-color: white;
+    color: #223F89;
+    margin: 20px 50px 0 0;
+}
+
+#search{
+    display: flex;
+    width: 150px;
+    background: white;
+    margin: 20px 20px 0 0;
+}
+
+#maggy{
+    margin-left: 120px;
+    padding: 3px 0 0 3px;
+}
+
+#searchinput{
+    position: absolute;
+    background-color: #223F89;
+    width: 110px;
+    height: 25px;
+    color: white;
+    margin: 5px 0 0 5px;
+}
+
+/* Announcements, FAQ, ENU, Portal */
+.main-selector-bar{
+    height: 8%;
+    width: 100%;
+}
+
+.mainselectorflex{
+    display: flex;
+    justify-content: center;
+}
+
+.top4buttons{
+    text-decoration: none;
+    color: #223F89;
+    font-size: 20px;
+    margin: 30px 40px 0 40px;
+    padding: 5px;
+    transition: 0.3s;
+}
+
+.top4buttons:hover {
+    text-decoration: none;
+    color: white;
+    background-color: #223F89;
+    transition: 0.3s;
+}
+
+.top4buttons:active{
+    color: white;
+    transition: 0.3s;
+    background-color: #223F89; 
+}
