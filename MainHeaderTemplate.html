@@ -54,7 +54,7 @@
 
     <!-- This is where the template ends, below are the specifics per page :) -->
 
-    <!-- The Modal -->
+    <!-- The Modal Login Popup -->
     <div id="myModal" class="modal">
 
     <!-- Modal content -->
@@ -71,7 +71,17 @@
             <h4 class = "LoginTitles"> Username</h4>
             <input type="password" placeholder = "Enter your Password" class = "LoginInput">
             <h4 class = "LoginTitles"> Password</h4>
-            <button type="button" class="LoginButtons">Login</button>
+            <button type="button" class="LoginModalButtons" id = "LoginButton" >Login</button>
+            
+            <!--Comment these out if there's no error LOL-->
+            <p id = "RedAsterisk">*</p>
+            <p id = "InvalidPassword">* Invalid Password</p>
+            
+            <div class = "forgotinfobody">
+                <p id = "forgotinfotext" >Forgot your Username/Password?</p>
+                <button type="button" class="LoginModalButtons" id = "RequestResetButton">Request a Reset</button>
+            </div>
+            <!--End of Error Chunk-->
         </div>
     </div>
 

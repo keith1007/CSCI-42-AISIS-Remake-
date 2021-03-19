@@ -56,6 +56,7 @@
     to {top:0; opacity:1}
 }
 
+/*Everything in the Modal Body*/
 #admulogologin {
     width: 40px;
     height: 40px;
@@ -79,18 +80,60 @@
 
 .LoginTitles{
     color: #223F89;
-    margin-left: 370px;
+    align-self: center;
+    margin-left: 230px;
+    
 }
 
-.LoginButtons{
+.LoginModalButtons{
     background-color: #223F89;
     color: white;
     font-size: 16px;
-    margin: 20px 225px 10px 225px;
+    padding: 2px 15px 2px 15px;
+    border-radius: 5px;
+    
 }
 
-.LoginButtons:active{
+.LoginModalButtons:active{
     background-color: #2C52B1;
     transform: scale(0.95);
     transition: 0.3s;
+}
+
+#LoginButton{
+    align-self: center;
+    padding: 2px 40px 2px 40px;
+}
+
+#InvalidPassword{
+    color: red;
+    font-style: italic;
+    font-size: 12px;
+    align-self: center;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+#RedAsterisk{
+    color: red;
+    position: absolute;
+    align-self: flex-end;
+    margin: 95px 115px 0 0;
+    font-size: 36px;
+    
+}
+
+.forgotinfobody{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: #223F89;
+}
+
+#forgotinfotext{
+    margin-top: 13px;
+}
+
+#RequestResetButton{
+    margin: 10px;
 }
