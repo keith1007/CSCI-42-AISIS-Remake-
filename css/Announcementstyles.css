@@ -104,9 +104,9 @@ ul li {
 .triangle-up{
     width: 0;
 	height: 0;
+    border-bottom: 60px solid rgb(37, 68, 148);
 	border-left: 40px solid transparent;
 	border-right: 40px solid transparent;
-	border-bottom: 60px solid rgb(37, 68, 148);
     position: fixed;
     bottom: 90px;
     right: 30px;
@@ -116,7 +116,7 @@ ul li {
 .triangle-up:hover {
     transform: scale(0.9);
     transition: 0.3s;
-    border-bottom: rgba(34,63,137, 1);
+    border-top: rgba(34,63,137, 1);
 }
 
 /* Top 4 Buttons */
