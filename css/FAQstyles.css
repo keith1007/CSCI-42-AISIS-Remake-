@@ -99,24 +99,39 @@
 }
 /* the Triangle Buttons naman*/
 
-.triangle-up{
-    width: 0;
-	height: 0;
-	border-left: 40px solid transparent;
-	border-right: 40px solid transparent;
-	border-bottom: 60px solid #223F89;
-    position: fixed;
-    bottom: 90px;
-    right: 30px;
-}
-
 .triangle-down{
     width: 0;
 	height: 0;
 	border-left: 40px solid transparent;
 	border-right: 40px solid transparent;
-	border-top: 60px solid #223F89;
+	border-top: 60px solid rgb(37, 68, 148);
     position: fixed;
     bottom: 20px;
     right: 30px;
+    transition: 0.2s;
+}
+
+.triangle-down:hover {
+    transform: scale(0.9);
+    transition: 0.3s;
+    border-bottom: rgba(34,63,137, 1);
+}
+
+
+.triangle-up{
+    width: 0;
+	height: 0;
+    border-bottom: 60px solid rgb(37, 68, 148);
+	border-left: 40px solid transparent;
+	border-right: 40px solid transparent;
+    position: fixed;
+    bottom: 90px;
+    right: 30px;
+    transition: 0.2s;
+}
+
+.triangle-up:hover {
+    transform: scale(0.9);
+    transition: 0.3s;
+    border-top: rgba(34,63,137, 1);
 }
