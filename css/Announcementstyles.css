@@ -2,3 +2,142 @@
     color: white;
     background-color: #223F89; 
 }
+
+.announcepage{
+    margin-bottom: 2rem;
+}
+
+/* Container of the page */
+.AnnounceContainer{
+    height: 72%;
+    box-sizing: border-box;
+    padding: 0 210px 0 210px;
+    margin-top: 30px;
+}
+
+/* For the unordered list properties */
+ul {
+    padding: 0;
+    margin: 50px 20px;
+    list-style-type: none;
+}
+
+ul li {
+    margin: 5px;
+    display: block;
+    margin-bottom: 20px;
+     
+}
+
+/* Card or container of the announcement/s content */
+.card {
+    padding: 5px;
+    display: flex;      
+    border: 1px solid rgba(37, 68, 148, 0.91);
+    border-radius: 5px;
+    color: white;
+    transition: 0.4s;
+    background-color: rgba(37, 68, 148, 0.91);
+}
+
+.card:hover {
+    transform: scale(1.1);
+    transition: 0.4s;
+    box-shadow: 0 0 7px rgba(0,0,0, 0.7);
+    border: 1px solid rgba(34,63,137, 1);
+    background-color: rgba(34,63,137, 1);
+}
+
+.cardlines {
+    white-space: normal;
+}
+
+/* Components inside the container */
+.announceheader {
+    text-align: left;
+    color: white;
+    font-size: 15px;
+}
+
+.date {
+    text-align: left;
+    font-size: 14px;
+}
+.content {
+    padding-left: 15px;
+    color: white;
+}
+
+.bottom-copyright{
+    width: 100%;
+    height: 20%;
+    background-color: #EBE7E7;
+    color: #898787;
+    text-align: center;
+    box-sizing: border-box;
+    font-size: 10px;
+    margin-top: 20px;
+    padding-top: 45px;
+}
+
+/* the Triangle Buttons naman*/
+
+.triangle-down{
+    width: 0;
+	height: 0;
+	border-left: 40px solid transparent;
+	border-right: 40px solid transparent;
+	border-top: 60px solid rgb(37, 68, 148);
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    transition: 0.2s;
+}
+
+.triangle-down:hover {
+    transform: scale(0.9);
+    transition: 0.3s;
+    border-bottom: rgba(34,63,137, 1);
+}
+
+
+.triangle-up{
+    width: 0;
+	height: 0;
+    border-bottom: 60px solid rgb(37, 68, 148);
+	border-left: 40px solid transparent;
+	border-right: 40px solid transparent;
+    position: fixed;
+    bottom: 90px;
+    right: 30px;
+    transition: 0.2s;
+}
+
+.triangle-up:hover {
+    transform: scale(0.9);
+    transition: 0.3s;
+    border-top: rgba(34,63,137, 1);
+}
+
+/* Top 4 Buttons */
+.top4buttons{
+    text-decoration: none;
+    color: #223F89;
+    font-size: 20px;
+    margin: 30px 40px 0 40px;
+    padding: 5px;
+    transition: 0.3s;
+}
+
+.top4buttons:hover {
+    text-decoration: none;
+    color: white;
+    background-color: #223F89;
+    transition: 0.3s;
+}
+
+.top4buttons:active{
+    color: white;
+    transition: 0.3s;
+    background-color: #223F89; 
+}
