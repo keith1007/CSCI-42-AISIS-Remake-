@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AISIS Remake Template</title>
     <link rel="stylesheet" href="css/mainstyles.css">
+    <link rel="stylesheet" href="css/Loginstyles.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
 </head>
@@ -25,7 +26,7 @@
         <div class = "headerflex"> 
             <div>
                 <img src="images/admulogo.png" id = "admulogo" alt="ateneo's logo">
-                <a href="StudentPortalPage.html">
+                <a href="MainHeaderTemplate.html">
                     <img src="images/aisislogo.png" id = "aisislogo" alt="admu aisis' logo">
                 </a>
             </div>
@@ -47,11 +48,56 @@
             <a href="AnnouncementsPage.html" class = "top4buttons" id = "announcebutton">Announcements</a>
             <a href="FAQPage.html" class = "top4buttons" id = "FAQbutton">Frequently Asked</a>
             <a href="EnlistmentUpdatesPage.html" class = "top4buttons" id = "enlistupdatesbutton">Enlistment Updates</a>
-            <a href="StudentPortalPage.html" class = "top4buttons" id = "studentportalhomebutton">Atenean Portal</a>
+            <a href="#" class = "top4buttons" id = "studentportalhomebutton">Atenean Portal</a>
         </div>
     </header> 
 
     <!-- This is where the template ends, below are the specifics per page :) -->
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <div class="modal-header">
+            <div>
+                <img src="images/admulogo.png" id = "admulogologin" alt="ateneo's logo">
+                <img src="images/aisislogo.png" id = "aisislogologin" alt="admu aisis' logo">   
+            </div>
+        </div>
+        
+        <div class="modal-body">
+            <input type="text" placeholder = "Enter your Username" class = "LoginInput">
+            <h4 class = "LoginTitles"> Username</h4>
+            <input type="password" placeholder = "Enter your Password" class = "LoginInput">
+            <h4 class = "LoginTitles"> Password</h4>
+            <button type="button" class="LoginButtons">Login</button>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    // thank you W3 Schools
+    // Get the modal
+    var modal = document.getElementById("myModal");
+    
+    // Get the button that opens the modal
+    var btn = document.getElementById("studentportalhomebutton");
+    
+    // When the user clicks the button, open the modal 
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+        modal.style.display = "none";
+        }
+    }
+   
+</script>
 
 </body>
 </html>

@@ -1,0 +1,96 @@
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: white;
+    margin: auto;
+    margin-top: 70px;
+    padding: 0;
+    border: 1px solid #000;
+    width: 40%;
+    height: 55%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 5px;
+
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+.modal-header {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    margin: 25px 0 0 0;
+    background-color: #223F89;
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    padding: 2px 16px;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+#admulogologin {
+    width: 40px;
+    height: 40px;
+    margin: 5px 0 3px 0;
+}
+
+#aisislogologin {
+    width: 230px;
+    height: 50px; 
+    margin: 0 0 0 8px;
+}
+
+.LoginInput{
+    border-color: #223F89;
+    background-color: #EBE7E7;
+    height: 30px;
+    margin: 20px 140px 10px 140px;
+    padding: 0px 15px;
+
+}
+
+.LoginTitles{
+    color: #223F89;
+    margin-left: 370px;
+}
+
+.LoginButtons{
+    background-color: #223F89;
+    color: white;
+    font-size: 16px;
+    margin: 20px 225px 10px 225px;
+}
+
+.LoginButtons:active{
+    background-color: #2C52B1;
+    transform: scale(0.95);
+    transition: 0.3s;
+}
