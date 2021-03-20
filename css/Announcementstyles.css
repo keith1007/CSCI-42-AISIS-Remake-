@@ -32,30 +32,24 @@
 
 /* Container of the page */
 .AnnounceContainer{
+    display: flex;
+    flex-direction: column;
     height: 72%;
     box-sizing: border-box;
     padding: 0 210px 0 210px;
-    margin-top: 30px;
+    margin-top: 40px;
+
 }
 
-/* For the unordered list properties */
-ul {
-    padding: 0;
-    margin: 50px 20px;
-    list-style-type: none;
-}
-
-ul li {
-    margin: 5px;
-    display: block;
-    margin-bottom: 20px;
-     
+.AnnounceContainer > div {
+    margin: 10px;
 }
 
 /* Card or container of the announcement/s content */
 .card {
     padding: 25px;
-    display: flex;      
+    display: flex;
+    flex-direction: column; 
     border: 1px solid rgba(37, 68, 148, 0.91);
     border-radius: 5px;
     color: white;
