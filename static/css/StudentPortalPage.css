@@ -26,6 +26,14 @@
     background-color: #223F89; 
 }
 
+.WelcomeContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    /* to center the objects, I use margin-right */
+    margin-right: 50px;
+}
 
 /* FOR THE BULK OF THE CONTENT IN STUDENT PORTAL */
 .PortalContainer{
