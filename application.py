@@ -42,3 +42,14 @@ def login():
         return redirect(url_for('student_portal'))
     else:
         return redirect(url_for(request.referrer.split('/')[-1]))
+
+@app.route('/logout')
+def logout():
+    prev_route = request.referrer.split('/')[-1]
+    if 'username' in session:
+        session.pop('username')
+    if prev_route == 'student_portal':
+        return redirect(url_for('announcements'))
+    else:
+        return redirect(url_for(prev_route))
+
