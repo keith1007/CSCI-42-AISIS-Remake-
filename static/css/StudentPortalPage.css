@@ -35,6 +35,23 @@
     margin-right: 50px;
 }
 
+.WelcomeContainer>div{
+    margin: 6px;
+}
+
+.welcome {
+    text-align: right;
+    font-size: 40px;
+    color:  rgb(34, 63, 137);
+    letter-spacing: 3px;
+}
+
+.generalinfo {
+    font-size: 14px;
+    color:  rgb(34, 63, 137);
+    font-weight: lighter;
+}
+
 /* FOR THE BULK OF THE CONTENT IN STUDENT PORTAL */
 .PortalContainer{
     display: flex;
