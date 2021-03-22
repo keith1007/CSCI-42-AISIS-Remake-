@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AISIS Remake Template</title>
     <link rel="stylesheet" href="../static/css/mainstyles.css">
+    {% block specific_css %}
+    {% endblock %}
     <link rel="stylesheet" href="../static/css/Loginstyles.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
@@ -53,6 +55,9 @@
     </header> 
 
     <!-- This is where the template ends, below are the specifics per page :) -->
+
+	{% block body %}
+	{% endblock %}
 
     <!-- The Modal Login Popup -->
     <div id="myModal" class="modal">

@@ -1,184 +1,134 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Announcements - AISIS Remake</title>
-    <link rel="stylesheet" href="../static/css/mainstyles.css">
-    <link rel="stylesheet" href="../static/css/Announcementstyles.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
-</head>
-<body>
-    
-    <!-- The Thin Grey Line -->
-    <nav class = "main-navbar" id = "top">
-        <div class = "navflex"> 
-            <p id = "p-officialtime"> <b>Official Time</b> | PST March 17, 2021 17:14:28</p>
-            <p id = "p-enlistmentstarts"> Online enlistment starts on <b>July 2,2021</b> </p>
-            <a href="#" id = "contactus">Contact Us</a>
+{% extends 'MainHeaderTemplate.html' %}
+
+{% block specific_css %}
+<link rel="stylesheet" href="../static/css/Announcementstyles.css">
+{% endblock %}
+
+{% block body %}
+<div class="AnnounceContainer">
+
+    <!-- Announcements Body -->
+    <div class="card">
+        <div class="cardlines">
+            <h2 class="announceheader">Deadline for Submission by Undergraduate 
+                Students of Applications for Double Degree, effective SY 2021-2022</h2>
+            <p class="date"> February 22, 2021</p>
+            <br/>
+            <p class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
+                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit 
+                in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia 
+                deserunt mollit anim id est laborum.</p>
         </div>
-    </nav>
-
-    <!-- Thicc Blue Strip-->
-    <header class = "main-header">
-        <div class = "headerflex"> 
-            <div>
-                <img src="../static/images/admulogo.png" id = "admulogo" alt="ateneo's logo">
-                <a href="student_portal">
-                    <img src="../static/images/aisislogo.png" id = "aisislogo" alt="admu aisis' logo">
-                </a>
-            </div>
-            <div class = "signout">
-                <div id = "search"> 
-                    <input type="text" id = "searchinput">
-                    <a href="#">
-                        <img src="../static/images/magglass.png" id="maggy" alt="search button">
-                    </a>
-                </div>  
-                <a href="#" >SIGN OUT</a>
-            </div> 
-        </div>
-    </header>
-
-    <!-- 4 Buttons = Announcements, FAQs, Enlist Updates, Atenean Portal -->
-    <header class = "main-selector-bar">
-        <div class = "mainselectorflex">
-            <a href="announcements" class = "top4buttons" id = "announcebutton">Announcements</a>
-            <a href="faq" class = "top4buttons" id = "FAQbutton">Frequently Asked</a>
-            <a href="enlistment_updates" class = "top4buttons" id = "enlistupdatesbutton">Enlistment Updates</a>
-            <a href="student_portal" class = "top4buttons" id = "studentportalhomebutton">Atenean Portal</a>
-        </div>
-    </header> 
-
-    <!-- This is where the template ends, below are the specifics per page :) -->
-    <div class="AnnounceContainer">
-
-        <!-- Announcements Body -->
-        <div class="card">
-            <div class="cardlines">
-                <h2 class="announceheader">Deadline for Submission by Undergraduate 
-                    Students of Applications for Double Degree, effective SY 2021-2022</h2>
-                <p class="date"> February 22, 2021</p>
-                <br/>
-                <p class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
-                    enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
-                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit 
-                    in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia 
-                    deserunt mollit anim id est laborum.</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="cardlines">
-                <h2 class="announceheader">Official Enrollment and Completion of Registration Process for 
-                    Second Semester, School Year 2020-2021</h2>
-                <p class="date"> February 7, 2021</p>
-                <br/>
-                <p class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
-                    enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
-                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit 
-                    in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia 
-                    deserunt mollit anim id est laborum.</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="cardlines">
-                <h2 class="announceheader">Adjustments to Academic Processes</h2>
-                <p class="date"> January 16, 2021</p>
-                <br/>
-                <p class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
-                    enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
-                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit 
-                    in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia 
-                    deserunt mollit anim id est laborum.</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="cardlines">
-                <h2 class="announceheader">Adjusted Academic Calendar for the Second Semester, 
-                    School Year 2020-2021</h2>
-                <p class="date"> December 2, 2020</p>
-                <br/>
-                <p class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
-                    enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
-                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit 
-                    in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia 
-                    deserunt mollit anim id est laborum.</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="cardlines">
-                <h2 class="announceheader">Adjusted Academic Calendar for the remainder of the 
-                    First Semester, School Year 2020-2021</h2>
-                <p class="date"> November 24, 2020</p>
-                <br/>
-                <p class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
-                    enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
-                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit 
-                    in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia 
-                    deserunt mollit anim id est laborum.</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="cardlines">
-                <h2 class="announceheader">Requests for Reinstatement and/or Extension for Second Semester of School Year 2020-2021</h2>
-                <p class="date"> October 29, 2020</p>
-                <br/>
-                <p class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
-                    enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
-                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit 
-                    in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia 
-                    deserunt mollit anim id est laborum.</p>
-            </div>
-        </div>
-
-        <!--Copyright & Navigation Triangles-->
-        <p class = "bottom-copyright" id = "bottom"> (c) Copyright 2006 Ateneo Integrated Student Information System. Ateneo de Manila University. All Rights Reserved.</p>
-        
-       <a href="#top"> 
-            <div class="triangle-up"></div>
-       </a>     
-
-       <a href="#bottom"> 
-            <div class="triangle-down"></div>
-        </a>     
     </div>
-    
-    <script>
-        var coll = document.getElementsByClassName("collapsible");
-        var i;
-        
-        for (i = 0; i < coll.length; i++) {
-          coll[i].addEventListener("click", function() {
-            /* alert("Luh bat mo naclick yan"); */
-            this.classList.toggle("active");
-            var hiddencontent = this.parentElement.nextElementSibling;
-            if (hiddencontent.style.display === "block") {
-                hiddencontent.style.display = "none";
-            } else {
-                hiddencontent.style.display = "block";
-            }
-          });
-        }
-    </script>
 
-</body>
-</html>
+    <div class="card">
+        <div class="cardlines">
+            <h2 class="announceheader">Official Enrollment and Completion of Registration Process for 
+                Second Semester, School Year 2020-2021</h2>
+            <p class="date"> February 7, 2021</p>
+            <br/>
+            <p class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
+                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit 
+                in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia 
+                deserunt mollit anim id est laborum.</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="cardlines">
+            <h2 class="announceheader">Adjustments to Academic Processes</h2>
+            <p class="date"> January 16, 2021</p>
+            <br/>
+            <p class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
+                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit 
+                in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia 
+                deserunt mollit anim id est laborum.</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="cardlines">
+            <h2 class="announceheader">Adjusted Academic Calendar for the Second Semester, 
+                School Year 2020-2021</h2>
+            <p class="date"> December 2, 2020</p>
+            <br/>
+            <p class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
+                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit 
+                in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia 
+                deserunt mollit anim id est laborum.</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="cardlines">
+            <h2 class="announceheader">Adjusted Academic Calendar for the remainder of the 
+                First Semester, School Year 2020-2021</h2>
+            <p class="date"> November 24, 2020</p>
+            <br/>
+            <p class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
+                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit 
+                in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia 
+                deserunt mollit anim id est laborum.</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="cardlines">
+            <h2 class="announceheader">Requests for Reinstatement and/or Extension for Second Semester of School Year 2020-2021</h2>
+            <p class="date"> October 29, 2020</p>
+            <br/>
+            <p class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
+                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit 
+                in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia 
+                deserunt mollit anim id est laborum.</p>
+        </div>
+    </div>
+
+    <!--Copyright & Navigation Triangles-->
+    <p class = "bottom-copyright" id = "bottom"> (c) Copyright 2006 Ateneo Integrated Student Information System. Ateneo de Manila University. All Rights Reserved.</p>
+    
+   <a href="#top"> 
+        <div class="triangle-up"></div>
+   </a>     
+
+   <a href="#bottom"> 
+        <div class="triangle-down"></div>
+    </a>     
+</div>
+
+<script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+    
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        /* alert("Luh bat mo naclick yan"); */
+        this.classList.toggle("active");
+        var hiddencontent = this.parentElement.nextElementSibling;
+        if (hiddencontent.style.display === "block") {
+            hiddencontent.style.display = "none";
+        } else {
+            hiddencontent.style.display = "block";
+        }
+      });
+    }
+</script>
+{% endblock %}
