@@ -1,215 +1,153 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Portal - AISIS Remake</title>
-    <link rel="stylesheet" href="../static/css/mainstyles.css"> 
-    <link rel="stylesheet" href="../static/css/StudentPortalPage.css"> 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
-</head>
-<body>
-    
-    <!-- The Thin Grey Line -->
-    <nav class = "main-navbar" id = "top">
-        <div class = "navflex"> 
-            <p id = "p-officialtime"> <b>Official Time</b> | PST March 17, 2021 17:14:28</p>
-            <p id = "p-enlistmentstarts"> Online enlistment starts on <b>July 2,2021</b> </p>
-            <a href="#" id = "contactus">Contact Us</a>
-        </div>
-    </nav>
+{% extends 'MainHeaderTemplate.html' %}
 
-    <!-- Thicc Blue Strip-->
-    <header class = "main-header">
-        <div class = "headerflex"> 
-            <div>
-                <img src="../static/images/admulogo.png" id = "admulogo" alt="ateneo's logo">
-                <a href="StudentPortalPage.html">
-                    <img src="../static/images/aisislogo.png" id = "aisislogo" alt="admu aisis' logo">
-                </a>
-            </div>
-            <div class = "signout">
-                <div id = "search"> 
-                    <input type="text" id = "searchinput">
-                    <a href="#">
-                        <img src="../static/images/magglass.png" id="maggy" alt="search button">
-                    </a>
-                </div>  
-                <a href="#" >SIGN OUT</a>
-            </div> 
-        </div>
-    </header>
+{% block specific_css %}
+<link rel="stylesheet" href="../static/css/StudentPortalPage.css"> 
+{% endblock %}
 
-    <!-- 4 Buttons = Announcements, FAQs, Enlist Updates, Atenean Portal -->
-    <header class = "main-selector-bar">
-        <div class = "mainselectorflex">
-            <a href="announcements" class = "top4buttons" id = "announcebutton">Announcements</a>
-            <a href="faq" class = "top4buttons" id = "FAQbutton">Frequently Asked</a>
-            <a href="enlistment_updates" class = "top4buttons" id = "enlistupdatesbutton">Enlistment Updates</a>
-            <a href="#" class = "top4buttons" id = "studentportalhomebutton">Atenean Portal</a>
-        </div>
-    </header> 
+<!-- Portal Content bulk -->
+{% block body %}
+<div class="PortalContainer">
 
-    <!-- This is where the template ends, below are the specifics per page :) -->
-    
-    <!-- Welcome, Student + other info on header -->
-    <div class="WelcomeContainer">
-        <div class="welcome"> Welcome, <b>Student</b></div>
-        <div class="generalinfo">
-            <p> Identified as <b>Hokage Naruto Uzumaki</b></p>
-            <p> Year Level <b>99</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Regular <b>Y</b></p>
-            <p> Degree <b>BS Computer Science</b></p>
+    <!-- First two: Google and Update Student Info -->
+    <div class="card">
+        <div class="cardlines">
+            <h2 class="portaltextheader">Google Information</h2>
+            <br/>
+            <p class="content">Google Account Information</p>
         </div>
     </div>
 
-
-    <!-- Portal Content bulk -->
-    <div class="PortalContainer">
-
-        <!-- First two: Google and Update Student Info -->
-        <div class="card">
-            <div class="cardlines">
-                <h2 class="portaltextheader">Google Information</h2>
-                <br/>
-                <p class="content">Google Account Information</p>
-            </div>
+    <div class="card">
+        <div class="cardlines">
+            <h2 class="portaltextheader">Update Student Information</h2>
+            <br/>
+            <p class="content">Update your contact information and addresses</p>
         </div>
-
-        <div class="card">
-            <div class="cardlines">
-                <h2 class="portaltextheader">Update Student Information</h2>
-                <br/>
-                <p class="content">Update your contact information and addresses</p>
-            </div>
-        </div>
-
-        <!-- FOR THIS SEMESTER -->
-        <h1 class = "PortalCategories"> for <b>this semester</b></h1>
-        <div class="card">
-            <div class="cardlines">
-                <h2 class="portaltextheader">My Currently Enrolled Classes</h2>
-                <br/>
-                <p class="content">View your current semester subjects' syllabi</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="cardlines">
-                <h2 class="portaltextheader">My Class Schedule</h2>
-                <br/>
-                <p class="content">View your current semester class schedule</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="cardlines">
-                <h2 class="portaltextheader">My Hold Orders</h2>
-                <br/>
-                <p class="content">Find out if you have hold orders</p>
-            </div>
-        </div>
-
-        <!-- ABOUT YOUR WHOLE STAY -->
-        <h1 class = "PortalCategories"> about your <b>whole stay</b></h1>
-        <div class="card">
-            <div class="cardlines">
-                <h2 class="portaltextheader">My Grades</h2>
-                <br/>
-                <p class="content">View your grades from your freshman to current year</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="cardlines">
-                <h2 class="portaltextheader">Tuition Receipts</h2>
-                <br/>
-                <p class="content">Print your past and current tuition receipts</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="cardlines">
-                <h2 class="portaltextheader">My Individual Program of Study (IPS)</h2>
-                <br/>
-                <p class="content">View the entire official plan of your degree</p>
-            </div>
-        </div>
-
-        <!-- FORMS AND DOCUMENTATIONS -->
-        <h1 class = "PortalCategories"><b>forms and documentations</b></h1>
-        <div class="card">
-            <div class="cardlines">
-                <h2 class="portaltextheader">Official Curriculum</h2>
-                <br/>
-                <p class="content">View the official curriculum of the different degrees</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="cardlines">
-                <h2 class="portaltextheader">Class Schedule</h2>
-                <br/>
-                <p class="content">View the schedule of all classes being offered</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="cardlines">
-                <h2 class="portaltextheader">Load Revision Form</h2>
-                <br/>
-                <p class="content">Student Load Revision Form</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="cardlines">
-                <h2 class="portaltextheader">Change Degree Program Form</h2>
-                <br/>
-                <p class="content">Download Form for changing your degree program or applying for minor/specialization</p>
-            </div>
-        </div>    
-
-        <!-- MANAGE YOUR ACCOUNT -->
-        <h1 class = "PortalCategories">manage <b>your account</b></h1>
-        <div class="card">
-            <div class="cardlines">
-                <h2 class="portaltextheader">Change Password</h2>
-                <br/>
-                <p class="content">Password must be at least 8 characters long</p>
-            </div>
-        </div>
-
-        <!--Copyright & Navigation Triangles-->
-        <p class = "bottom-copyright" id = "bottom"> (c) Copyright 2006 Ateneo Integrated Student Information System. Ateneo de Manila University. All Rights Reserved.</p>
-        
-       <a href="#top"> 
-            <div class="triangle-up"></div>
-       </a>     
-
-       <a href="#bottom"> 
-            <div class="triangle-down"></div>
     </div>
 
+    <!-- FOR THIS SEMESTER -->
+    <h1 class = "PortalCategories"> for <b>this semester</b></h1>
+    <div class="card">
+        <div class="cardlines">
+            <h2 class="portaltextheader">My Currently Enrolled Classes</h2>
+            <br/>
+            <p class="content">View your current semester subjects' syllabi</p>
+        </div>
+    </div>
 
-    <script>
-        var coll = document.getElementsByClassName("collapsible");
-        var i;
-        
-        for (i = 0; i < coll.length; i++) {
-          coll[i].addEventListener("click", function() {
-            /* alert("Luh bat mo naclick yan"); */
-            this.classList.toggle("active");
-            var hiddencontent = this.parentElement.nextElementSibling;
-            if (hiddencontent.style.display === "block") {
-                hiddencontent.style.display = "none";
-            } else {
-                hiddencontent.style.display = "block";
-            }
-          });
+    <div class="card">
+        <div class="cardlines">
+            <h2 class="portaltextheader">My Class Schedule</h2>
+            <br/>
+            <p class="content">View your current semester class schedule</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="cardlines">
+            <h2 class="portaltextheader">My Hold Orders</h2>
+            <br/>
+            <p class="content">Find out if you have hold orders</p>
+        </div>
+    </div>
+
+    <!-- ABOUT YOUR WHOLE STAY -->
+    <h1 class = "PortalCategories"> about your <b>whole stay</b></h1>
+    <div class="card">
+        <div class="cardlines">
+            <h2 class="portaltextheader">My Grades</h2>
+            <br/>
+            <p class="content">View your grades from your freshman to current year</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="cardlines">
+            <h2 class="portaltextheader">Tuition Receipts</h2>
+            <br/>
+            <p class="content">Print your past and current tuition receipts</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="cardlines">
+            <h2 class="portaltextheader">My Individual Program of Study (IPS)</h2>
+            <br/>
+            <p class="content">View the entire official plan of your degree</p>
+        </div>
+    </div>
+
+    <!-- FORMS AND DOCUMENTATIONS -->
+    <h1 class = "PortalCategories"><b>forms and documentations</b></h1>
+    <div class="card">
+        <div class="cardlines">
+            <h2 class="portaltextheader">Official Curriculum</h2>
+            <br/>
+            <p class="content">View the official curriculum of the different degrees</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="cardlines">
+            <h2 class="portaltextheader">Class Schedule</h2>
+            <br/>
+            <p class="content">View the schedule of all classes being offered</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="cardlines">
+            <h2 class="portaltextheader">Load Revision Form</h2>
+            <br/>
+            <p class="content">Student Load Revision Form</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="cardlines">
+            <h2 class="portaltextheader">Change Degree Program Form</h2>
+            <br/>
+            <p class="content">Download Form for changing your degree program or applying for minor/specialization</p>
+        </div>
+    </div>    
+
+    <!-- MANAGE YOUR ACCOUNT -->
+    <h1 class = "PortalCategories">manage <b>your account</b></h1>
+    <div class="card">
+        <div class="cardlines">
+            <h2 class="portaltextheader">Change Password</h2>
+            <br/>
+            <p class="content">Password must be at least 8 characters long</p>
+        </div>
+    </div>
+
+    <!--Copyright & Navigation Triangles-->
+    <p class = "bottom-copyright" id = "bottom"> (c) Copyright 2006 Ateneo Integrated Student Information System. Ateneo de Manila University. All Rights Reserved.</p>
+    
+   <a href="#top"> 
+        <div class="triangle-up"></div>
+   </a>     
+
+   <a href="#bottom"> 
+        <div class="triangle-down"></div>
+</div>
+
+
+<script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+    
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        /* alert("Luh bat mo naclick yan"); */
+        this.classList.toggle("active");
+        var hiddencontent = this.parentElement.nextElementSibling;
+        if (hiddencontent.style.display === "block") {
+            hiddencontent.style.display = "none";
+        } else {
+            hiddencontent.style.display = "block";
         }
-    </script>
-
-</body>
-</html>
+      });
+    }
+</script>
+{% endblock %}
