@@ -27,34 +27,6 @@
 }
 
 
-/* FOR THE WELCOME AND INFO ON HEADER */
-.WelcomeContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 40px;
-    /* to center the objects, I use margin-right */
-    margin-right: 50px;
-}
-
-.WelcomeContainer>div{
-    margin: 6px;
-}
-
-.welcome {
-    text-align: right;
-    font-size: 40px;
-    color:  rgb(34, 63, 137);
-    letter-spacing: 3px;
-}
-
-.generalinfo {
-    font-size: 14px;
-    color:  rgb(34, 63, 137);
-    font-weight: lighter;
-}
-
-
 /* FOR THE BULK OF THE CONTENT IN STUDENT PORTAL */
 .PortalContainer{
     display: flex;
@@ -62,14 +34,14 @@
     height: 72%;
     box-sizing: border-box;
     padding: 0 210px 0 210px;
-    margin-top: 10px;
+    margin-top: 50px;
 }
 
 .PortalContainer > div {
     margin: 7px;
 }
 
-.PortalCategories {
+.PortalHeaders {
     font-size: 30px;
     color:  rgb(34, 63, 137);
     margin: 2px 0 2px 8px;
