@@ -50,7 +50,7 @@
             <a href="announcements" class = "top4buttons" id = "announcebutton">Announcements</a>
             <a href="faq" class = "top4buttons" id = "FAQbutton">Frequently Asked</a>
             <a href="enlistment_updates" class = "top4buttons" id = "enlistupdatesbutton">Enlistment Updates</a>
-            <a href="#" class = "top4buttons" id = "studentportalhomebutton">Atenean Portal</a>
+            <a href={{ 'student_portal' if 'username' in session else '#'}} class = "top4buttons" id = "studentportalhomebutton">Atenean Portal</a>
         </div>
     </header> 
 
@@ -59,6 +59,7 @@
 	{% block body %}
 	{% endblock %}
 
+{% if 'username' not in session  %}
     <!-- The Modal Login Popup -->
     <div id="myModal" class="modal">
 
@@ -72,21 +73,23 @@
         </div>
         
         <div class="modal-body">
-            <input type="text" placeholder = "Enter your Username" class = "LoginInput">
-            <h4 class = "LoginTitles"> Username</h4>
-            <input type="password" placeholder = "Enter your Password" class = "LoginInput">
-            <h4 class = "LoginTitles"> Password</h4>
-            <button type="button" class="LoginModalButtons" id = "LoginButton" >Login</button>
-            
-            <!--Comment these out if there's no error LOL-->
-            <p id = "RedAsterisk">*</p>
-            <p id = "InvalidPassword">* Invalid Password</p>
-            
-            <div class = "forgotinfobody">
-                <p id = "forgotinfotext" >Forgot your Username/Password?</p>
-                <button type="button" class="LoginModalButtons" id = "RequestResetButton">Request a Reset</button>
-            </div>
-            <!--End of Error Chunk-->
+        	<form action="login" method="post">
+	            <input type="text" placeholder = "Enter your Username" class = "LoginInput" name=username>
+	            <h4 class = "LoginTitles"> Username</h4>
+	            <input type="password" placeholder = "Enter your Password" class = "LoginInput" name=password>
+	            <h4 class = "LoginTitles"> Password</h4>
+	            <button type=submit class="LoginModalButtons" id = "LoginButton" >Login</button>
+	            
+	            <!--Comment these out if there's no error LOL-->
+	            <p id = "RedAsterisk">*</p>
+	            <p id = "InvalidPassword">* Invalid Password</p>
+	            
+	            <div class = "forgotinfobody">
+	                <p id = "forgotinfotext" >Forgot your Username/Password?</p>
+	                <button type="button" class="LoginModalButtons" id = "RequestResetButton">Request a Reset</button>
+	            </div>
+	            <!--End of Error Chunk-->
+            </form>
         </div>
     </div>
 
@@ -113,6 +116,8 @@
     }
    
 </script>
+
+{% endif %}
 
 </body>
 </html>
