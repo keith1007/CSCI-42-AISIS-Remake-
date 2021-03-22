@@ -71,9 +71,9 @@
                 <img src="../static/images/aisislogo.png" id = "aisislogologin" alt="admu aisis' logo">   
             </div>
         </div>
-        
-        <div class="modal-body">
-        	<form action="login" method="post">
+
+        <form action="login" method="post">
+        	<div class="modal-body">
 	            <input type="text" placeholder = "Enter your Username" class = "LoginInput" name=username>
 	            <h4 class = "LoginTitles"> Username</h4>
 	            <input type="password" placeholder = "Enter your Password" class = "LoginInput" name=password>
@@ -86,11 +86,11 @@
 	            
 	            <div class = "forgotinfobody">
 	                <p id = "forgotinfotext" >Forgot your Username/Password?</p>
-	                <button type="button" class="LoginModalButtons" id = "RequestResetButton">Request a Reset</button>
+	                <button type="submit" class="LoginModalButtons" id = "RequestResetButton">Request a Reset</button>
 	            </div>
 	            <!--End of Error Chunk-->
-            </form>
-        </div>
+        	</div>
+        </form>
     </div>
 
 </div>
