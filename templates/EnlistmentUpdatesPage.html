@@ -1,118 +1,70 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enlistment Updates - AISIS Remake</title>
-    <link rel="stylesheet" href="css/mainstyles.css">
-    <link rel="stylesheet" href="css/EnlistmentUpdatesPage.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
-</head>
-<body>
+{% extends 'MainHeaderTemplate.html' %}
+
+{% block specific_css %}
+<link rel="stylesheet" href="../static/css/EnlistmentUpdatesPage.css">
+{% endblock %}
+
+{% block body %}
+<!-- This is where the template ends, below are the specifics per page :) -->
+<div class="EnlistContainer">
     
-    <!-- The Thin Grey Line -->
-    <nav class = "main-navbar" id = "top">
-        <div class = "navflex"> 
-            <p id = "p-officialtime"> <b>Official Time</b> | PST March 17, 2021 17:14:28</p>
-            <p id = "p-enlistmentstarts"> Online enlistment starts on <b>July 2,2021</b> </p>
-            <a href="#" id = "contactus">Contact Us</a>
+    <!-- Update 1 -->
+    <h1 class = "EnlistHeaders"> List of Interdisciplinary Electives (IE) Course 
+        Offerings for First Semester SY 2020-2021</h1>
+        <p class = "EnlistDate"> Posted: August 24,2020 </p>
+    <div class = "EnlistButtonsFlex">
+        <div class="perEnlistflex">
+            <button type="button" class="collapsible"></button>
+            <h4 class = "EnlistCaption"> PDF File </h4>
         </div>
-    </nav>
-
-    <!-- Thicc Blue Strip-->
-    <header class = "main-header">
-        <div class = "headerflex"> 
-            <div>
-                <img src="images/admulogo.png" id = "admulogo" alt="ateneo's logo">
-                <a href="StudentPortalPage.html">
-                    <img src="images/aisislogo.png" id = "aisislogo" alt="admu aisis' logo">
-                </a>
-            </div>
-            <div class = "signout">
-                <div id = "search"> 
-                    <input type="text" id = "searchinput">
-                    <a href="#">
-                        <img src="images/magglass.png" id="maggy" alt="search button">
-                    </a>
-                </div>  
-                <a href="#" >SIGN OUT</a>
-            </div> 
-        </div>
-    </header>
-
-    <!-- 4 Buttons = Announcements, FAQs, Enlist Updates, Atenean Portal -->
-    <header class = "main-selector-bar">
-        <div class = "mainselectorflex">
-            <a href="AnnouncementsPage.html" class = "top4buttons" id = "announcebutton">Announcements</a>
-            <a href="FAQPage.html" class = "top4buttons" id = "FAQbutton">Frequently Asked</a>
-            <a href="EnlistmentUpdatesPage.html" class = "top4buttons" id = "enlistupdatesbutton">Enlistment Updates</a>
-            <a href="StudentPortalPage.html" class = "top4buttons" id = "studentportalhomebutton">Atenean Portal</a>
-        </div>
-    </header> 
-
-    <!-- This is where the template ends, below are the specifics per page :) -->
-    <div class="EnlistContainer">
-        
-        <!-- Update 1 -->
-        <h1 class = "EnlistHeaders"> List of Interdisciplinary Electives (IE) Course 
-            Offerings for First Semester SY 2020-2021</h1>
-            <p class = "EnlistDate"> Posted: August 24,2020 </p>
-        <div class = "EnlistButtonsFlex">
-            <div class="perEnlistflex">
-                <button type="button" class="collapsible"></button>
-                <h4 class = "EnlistCaption"> PDF File </h4>
-            </div>
-            <div class="hiddencontent">
-                <p>We don't know the actual answer to this 😅</p>
-            </div>
-        </div>
-
-    </br>
-    </br>
-        <!-- Update 2 -->
-        <h1 class = "EnlistHeaders"> Registration Schedule and Start of Classes for the First Semester, School Year 2020-2021</h1>
-        <p class = "EnlistDate"> Posted: August 20,2020 </p>
-        <div class = "EnlistButtonsFlex">
-            <div class="perEnlistflex">
-                <button type="button" class="collapsible"></button>
-                <h4 class = "EnlistCaption"> Click here to view the memo </h4>
-            </div>
-            <div class="hiddencontent">
-                <p>We don't know the actual answer to this 😅</p>
-            </div>
-        </div>
-
-        <!--Copyright & Navigation Triangles-->
-        <p class = "bottom-copyright" id = "bottom"> (c) Copyright 2006 Ateneo Integrated Student Information System. Ateneo de Manila University. All Rights Reserved.</p>
-        
-       <a href="#top"> 
-            <div class="triangle-up"></div>
-       </a>     
-
-       <a href="#bottom"> 
-            <div class="triangle-down"></div>
-        </a>     
+        <div class="hiddencontent">
+            <p>We don't know the actual answer to this 😅</p>
         </div>
     </div>
+
+</br>
+</br>
+    <!-- Update 2 -->
+    <h1 class = "EnlistHeaders"> Registration Schedule and Start of Classes for the First Semester, School Year 2020-2021</h1>
+    <p class = "EnlistDate"> Posted: August 20,2020 </p>
+    <div class = "EnlistButtonsFlex">
+        <div class="perEnlistflex">
+            <button type="button" class="collapsible"></button>
+            <h4 class = "EnlistCaption"> Click here to view the memo </h4>
+        </div>
+        <div class="hiddencontent">
+            <p>We don't know the actual answer to this 😅</p>
+        </div>
+    </div>
+
+    <!--Copyright & Navigation Triangles-->
+    <p class = "bottom-copyright" id = "bottom"> (c) Copyright 2006 Ateneo Integrated Student Information System. Ateneo de Manila University. All Rights Reserved.</p>
     
-    <script>
-        var coll = document.getElementsByClassName("collapsible");
-        var i;
-        
-        for (i = 0; i < coll.length; i++) {
-          coll[i].addEventListener("click", function() {
-            /* alert("Luh bat mo naclick yan"); */
-            this.classList.toggle("active");
-            var hiddencontent = this.parentElement.nextElementSibling;
-            if (hiddencontent.style.display === "block") {
-                hiddencontent.style.display = "none";
-            } else {
-                hiddencontent.style.display = "block";
-            }
-          });
+   <a href="#top"> 
+        <div class="triangle-up"></div>
+   </a>     
+
+   <a href="#bottom"> 
+        <div class="triangle-down"></div>
+    </a>     
+    </div>
+</div>
+
+<script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+    
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        /* alert("Luh bat mo naclick yan"); */
+        this.classList.toggle("active");
+        var hiddencontent = this.parentElement.nextElementSibling;
+        if (hiddencontent.style.display === "block") {
+            hiddencontent.style.display = "none";
+        } else {
+            hiddencontent.style.display = "block";
         }
-    </script>
-</body>
-</html>
+      });
+    }
+</script>
+{% endblock %}
