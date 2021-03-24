@@ -5,10 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AISIS Remake Template</title>
-    <link rel="stylesheet" href="../static/css/mainstyles.css">
-    {% block specific_css %}
-    {% endblock %}
-    <link rel="stylesheet" href="../static/css/Loginstyles.css">
+    <link rel="stylesheet" href="css/mainstyles.css">
+    <link rel="stylesheet" href="css/Loginstyles.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
 </head>
@@ -27,19 +25,19 @@
     <header class = "main-header">
         <div class = "headerflex"> 
             <div>
-                <img src="../static/images/admulogo.png" id = "admulogo" alt="ateneo's logo">
+                <img src="images/admulogo.png" id = "admulogo" alt="ateneo's logo">
                 <a href="MainHeaderTemplate.html">
-                    <img src="../static/images/aisislogo.png" id = "aisislogo" alt="admu aisis' logo">
+                    <img src="images/aisislogo.png" id = "aisislogo" alt="admu aisis' logo">
                 </a>
             </div>
             <div class = "signout">
                 <div id = "search"> 
                     <input type="text" id = "searchinput">
                     <a href="#">
-                        <img src="../static/images/magglass.png" id="maggy" alt="search button">
+                        <img src="images/magglass.png" id="maggy" alt="search button">
                     </a>
                 </div>  
-                <a href="logout" >SIGN OUT</a>
+                <a href="#" >SIGN OUT</a>
             </div> 
         </div>
     </header>
@@ -47,19 +45,15 @@
     <!-- 4 Buttons = Announcements, FAQs, Enlist Updates, Atenean Portal -->
     <header class = "main-selector-bar">
         <div class = "mainselectorflex">
-            <a href="announcements" class = "top4buttons" id = "announcebutton">Announcements</a>
-            <a href="faq" class = "top4buttons" id = "FAQbutton">Frequently Asked</a>
-            <a href="enlistment_updates" class = "top4buttons" id = "enlistupdatesbutton">Enlistment Updates</a>
-            <a href={{ 'student_portal' if 'username' in session else '#'}} class = "top4buttons" id = "studentportalhomebutton">Atenean Portal</a>
+            <a href="AnnouncementsPage.html" class = "top4buttons" id = "announcebutton">Announcements</a>
+            <a href="FAQPage.html" class = "top4buttons" id = "FAQbutton">Frequently Asked</a>
+            <a href="EnlistmentUpdatesPage.html" class = "top4buttons" id = "enlistupdatesbutton">Enlistment Updates</a>
+            <a href="#" class = "top4buttons" id = "studentportalhomebutton">Atenean Portal</a>
         </div>
     </header> 
 
     <!-- This is where the template ends, below are the specifics per page :) -->
 
-	{% block body %}
-	{% endblock %}
-
-{% if 'username' not in session  %}
     <!-- The Modal Login Popup -->
     <div id="myModal" class="modal">
 
@@ -67,30 +61,28 @@
     <div class="modal-content">
         <div class="modal-header">
             <div>
-                <img src="../static/images/admulogo.png" id = "admulogologin" alt="ateneo's logo">
-                <img src="../static/images/aisislogo.png" id = "aisislogologin" alt="admu aisis' logo">   
+                <img src="images/admulogo.png" id = "admulogologin" alt="ateneo's logo">
+                <img src="images/aisislogo.png" id = "aisislogologin" alt="admu aisis' logo">   
             </div>
         </div>
-
-        <form action="login" method="post">
-        	<div class="modal-body">
-	            <input type="text" placeholder = "Enter your Username" class = "LoginInput" name=username>
-	            <h4 class = "LoginTitles"> Username</h4>
-	            <input type="password" placeholder = "Enter your Password" class = "LoginInput" name=password>
-	            <h4 class = "LoginTitles"> Password</h4>
-	            <button type=submit class="LoginModalButtons" id = "LoginButton" >Login</button>
-	            
-	            <!--Comment these out if there's no error LOL-->
-	            <p id = "RedAsterisk">*</p>
-	            <p id = "InvalidPassword">* Invalid Password</p>
-	            
-	            <div class = "forgotinfobody">
-	                <p id = "forgotinfotext" >Forgot your Username/Password?</p>
-	                <button type="submit" class="LoginModalButtons" id = "RequestResetButton">Request a Reset</button>
-	            </div>
-	            <!--End of Error Chunk-->
-        	</div>
-        </form>
+        
+        <div class="modal-body">
+            <input type="text" placeholder = "Enter your Username" class = "LoginInput">
+            <h4 class = "LoginTitles"> Username</h4>
+            <input type="password" placeholder = "Enter your Password" class = "LoginInput">
+            <h4 class = "LoginTitles"> Password</h4>
+            <button type="button" class="LoginModalButtons" id = "LoginButton" >Login</button>
+            
+            <!--Comment these out if there's no error LOL-->
+            <p id = "RedAsterisk">*</p>
+            <p id = "InvalidPassword">* Invalid Password</p>
+            
+            <div class = "forgotinfobody">
+                <p id = "forgotinfotext" >Forgot your Username/Password?</p>
+                <button type="button" class="LoginModalButtons" id = "RequestResetButton">Request a Reset</button>
+            </div>
+            <!--End of Error Chunk-->
+        </div>
     </div>
 
 </div>
@@ -116,8 +108,6 @@
     }
    
 </script>
-
-{% endif %}
 
 </body>
 </html>

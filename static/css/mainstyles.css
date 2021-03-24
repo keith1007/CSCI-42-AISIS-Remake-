@@ -45,44 +45,48 @@ body {
 /* Thicc Blue Strip */
 .main-header {
     width: 100%;
-    height: 16%;
+    height: 12%;
     background: #223F89;
 }
 
 .headerflex{
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
 #admulogo {
-    width: 5.5%;
-    height: 5.5%; 
-    padding: 20px 0 0 20px;
+    width: 50px;
+    height: 50px;
+    margin: 20px 0px 30px 40px;
 }
 
 #aisislogo {
-    width: 26%;
-    height: 26%; 
-    padding: 20px 0 0 10px;
+    width: 270px;
+    height: 60px; 
+    margin: 0px 0 30px 5px;
 }
 
 .signout{
     display:flex;
-    width: 30%;
+    width: 25%;
+    margin-bottom: 40px;
 }
 
 .signout>a{
     font-size: 24px;
     padding: 5px;
+    height: 28px;
     text-decoration: none;
     background-color: white;
     color: #223F89;
-    margin: 20px 50px 0 0;
+    margin: 20px 0 0 0 ;
 }
 
 #search{
     display: flex;
     width: 150px;
+    height: 38px; 
     background: white;
     margin: 20px 20px 0 0;
 }
@@ -116,7 +120,7 @@ body {
     text-decoration: none;
     color: #223F89;
     font-size: 20px;
-    margin: 30px 40px 0 40px;
+    margin: 20px 40px 0 40px;
     padding: 5px;
     transition: 0.3s;
 }
