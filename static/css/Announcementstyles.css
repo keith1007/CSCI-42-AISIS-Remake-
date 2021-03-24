@@ -7,29 +7,6 @@
     margin-bottom: 2rem;
 }
 
-/* Top 4 Buttons */
-.top4buttons{
-    text-decoration: none;
-    color: #223F89;
-    font-size: 20px;
-    margin: 30px 40px 0 40px;
-    padding: 5px;
-    transition: 0.3s;
-}
-
-.top4buttons:hover {
-    text-decoration: none;
-    color: white;
-    background-color: #223F89;
-    transition: 0.3s;
-}
-
-.top4buttons:active{
-    color: white;
-    transition: 0.3s;
-    background-color: #223F89; 
-}
-
 /* Container of the page */
 .AnnounceContainer{
     display: flex;
