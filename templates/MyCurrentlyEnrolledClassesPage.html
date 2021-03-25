@@ -1,58 +1,10 @@
- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Currently Enrolled Classes - AISIS Remake</title>
-    <link rel="stylesheet" href="css/mainstyles.css">
-    <link rel="stylesheet" href="css/Enlistmentstyles.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
-</head>
-<body>
+{% extends 'MainHeaderTemplate.html' %}
     
-    <!-- The Thin Grey Line -->
-    <nav class = "main-navbar" id = "top">
-        <div class = "navflex"> 
-            <p id = "p-officialtime"> <b>Official Time</b> | PST March 17, 2021 17:14:28</p>
-            <p id = "p-enlistmentstarts"> Online enlistment starts on <b>July 2,2021</b> </p>
-            <a href="#" id = "contactus">Contact Us</a>
-        </div>
-    </nav>
+{% block specific_css %}
+<link rel="stylesheet" href="../static/css/Enlistmentstyles.css">
+{% endblock %}
 
-    <!-- Thicc Blue Strip-->
-    <header class = "main-header">
-        <div class = "headerflex"> 
-            <div>
-                <img src="images/admulogo.png" id = "admulogo" alt="ateneo's logo">
-                <a href="StudentPortalPage.html">
-                    <img src="images/aisislogo.png" id = "aisislogo" alt="admu aisis' logo">
-                </a>
-            </div>
-            <div class = "signout">
-                <div id = "search"> 
-                    <input type="text" id = "searchinput">
-                    <a href="#">
-                        <img src="images/magglass.png" id="maggy" alt="search button">
-                    </a>
-                </div>  
-                <a href="#" >SIGN OUT</a>
-            </div> 
-        </div>
-    </header>
-
-    <!-- 4 Buttons = Announcements, FAQs, Enlist Updates, Atenean Portal -->
-    <header class = "main-selector-bar">
-        <div class = "mainselectorflex">
-            <a href="AnnouncementsPage.html" class = "top4buttons" id = "announcebutton">Announcements</a>
-            <a href="FAQPage.html" class = "top4buttons" id = "FAQbutton">Frequently Asked</a>
-            <a href="EnlistmentUpdatesPage.html" class = "top4buttons" id = "enlistupdatesbutton">Enlistment Updates</a>
-            <a href="StudentPortalPage.html" class = "top4buttons" id = "studentportalhomebutton">Atenean Portal</a>
-        </div>
-    </header> 
-
-    <!-- This is where the template ends, below are the specifics per page :) -->
+{% block body %}
     <!--Will add the Enlistment Table Below-->
 
     <div class="EnlistmentContainer">
@@ -180,3 +132,4 @@
     </div>
 </body>
 </html>
+{% endblock %}
