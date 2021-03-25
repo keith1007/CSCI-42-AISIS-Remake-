@@ -53,6 +53,11 @@ def logout():
     else:
         return redirect(prev_route)
 
-@app.route('/student_portal/enrolled_classes')
+@app.route('/student_portal/enlistment')
 def enrolled_classes():
+    return render_template('EnlistmentPage.html')
+
+
+@app.route('/student_portal/enrolled_classes')
+def enlistment():
     return render_template('MyCurrentlyEnrolledClassesPage.html')

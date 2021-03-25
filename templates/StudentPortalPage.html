@@ -39,7 +39,17 @@
 
     <!-- FOR THIS SEMESTER -->
     <h1 class = "PortalHeaders"> for <b>this semester</b></h1>
-	<a href={{ request.path + "/enrolled_classes" }}>
+	<a href={{ request.path + "/enlistment" }}>
+	    <div class="card">
+	        <div class="cardlines">
+	            <h2 class="portaltextheader">Enlist in Your Classes!</h2>
+	            <br/>
+	            <p class="content">Enlist or Delist in your Classes for this Semester!</p>
+	        </div>
+	    </div>
+    </a>
+
+    <a href={{ request.path + "/enrolled_classes" }}>
 	    <div class="card">
 	        <div class="cardlines">
 	            <h2 class="portaltextheader">My Currently Enrolled Classes</h2>
