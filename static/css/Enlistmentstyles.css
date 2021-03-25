@@ -1,7 +1,5 @@
 /*Enlistment Container CSS*/
-
 .EnlistmentContainer{
-    height: 76%;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -27,7 +25,6 @@
 
 .top-enlistment-header {
     width: 100%;
-    height: 15%;
     background-color: #EBE7E7;
     box-sizing: border-box;
     margin: 15px 0 20px 0;
@@ -36,15 +33,19 @@
 
 /* The Actual Enlistment Table */
 .enlistablediv{
-    height: 60%;
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    overflow-y: auto;    
+}
+
+.tablecontentsdiv{
+    display: flex;
     overflow-y: auto;
 }
 
 table {
-    border-collapse: collapse;
+    border-collapse:collapse;
     width: 90%;
     align-self: center;
     border-spacing: 1px 2px;
@@ -112,7 +113,7 @@ td {
 /* Bottom Grey Copyright */
 .bottom-copyright{
     width: 1100px;
-    height: 20%;
+    height: 100px;
     background-color: #EBE7E7;
     color: #898787;
     text-align: center;
@@ -120,9 +121,7 @@ td {
     font-size: 10px;
     margin-top: 10px;
     padding-top: 45px;
-    
     align-self: center;
-   
 }
 
 /* Syllabus Stuff bec im too lazy to make a new CSS */
@@ -136,4 +135,43 @@ td {
     background-color: #2C52B1;
     transform: scale(0.95);
     transition: 0.15s;
+}
+
+/* the Triangle Buttons naman*/
+
+.triangle-down{
+    width: 0;
+	height: 0;
+	border-left: 40px solid transparent;
+	border-right: 40px solid transparent;
+	border-top: 60px solid rgb(37, 68, 148);
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    transition: 0.2s;
+}
+
+.triangle-down:hover {
+    transform: scale(0.9);
+    transition: 0.3s;
+    border-bottom: rgba(34,63,137, 1);
+}
+
+
+.triangle-up{
+    width: 0;
+	height: 0;
+    border-bottom: 60px solid rgb(37, 68, 148);
+	border-left: 40px solid transparent;
+	border-right: 40px solid transparent;
+    position: fixed;
+    bottom: 90px;
+    right: 30px;
+    transition: 0.2s;
+}
+
+.triangle-up:hover {
+    transform: scale(0.9);
+    transition: 0.3s;
+    border-top: rgba(34,63,137, 1);
 }
