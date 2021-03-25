@@ -1,11 +1,18 @@
 from datetime import date
-from application import db, Announcement, FaqCategory, FAQ
+from application import (
+    db,
+    Announcement,
+    FaqCategory,
+    FAQ,
+    EnlistmentUpdate
+)
 
 db.create_all()
 
 Announcement.query.delete()
 FaqCategory.query.delete()
 FAQ.query.delete()
+EnlistmentUpdate.query.delete()
 
 # FOR ANNOUNCEMENTS
 db.session.add(
@@ -167,6 +174,25 @@ db.session.add(
         question="Ateneo Website",
         answer=dummy_message,
         category=faq_cat_other_links
+    )
+)
+
+# FOR ENLISTMENT UPDATES
+db.session.add(
+    EnlistmentUpdate(
+        title="List of Interdisciplinary Electives (IE) Course Offerings for First Semester SY 2020-2021",
+        date=date(2020, 8, 24),
+        prompt="PDF File",
+        content=dummy_message
+    )
+)
+
+db.session.add(
+    EnlistmentUpdate(
+        title="Registration Schedule and Start of Classes for the First Semester, School Year 2020-2021",
+        date=date(2020, 8, 20),
+        prompt="Click here to view the memo",
+        content=dummy_message
     )
 )
 

@@ -7,35 +7,20 @@
 {% block body %}
 <!-- This is where the template ends, below are the specifics per page :) -->
 <div class="EnlistContainer">
-    
-    <!-- Update 1 -->
-    <h1 class = "EnlistHeaders"> List of Interdisciplinary Electives (IE) Course 
-        Offerings for First Semester SY 2020-2021</h1>
-        <p class = "EnlistDate"> Posted: August 24,2020 </p>
+    {% for update in updates %}
+    <h1 class = "EnlistHeaders"> {{ update.title }}</h1>
+    	{% set m, d, y = update.date.strftime("%B %d %Y").split() %}
+        <p class = "EnlistDate"> Posted: {{ '%s %s, %s' % (m, d.lstrip("0"), y) }} </p>
     <div class = "EnlistButtonsFlex">
         <div class="perEnlistflex">
             <button type="button" class="collapsible"></button>
-            <h4 class = "EnlistCaption"> PDF File </h4>
+            <h4 class = "EnlistCaption"> {{ update.prompt }} </h4>
         </div>
         <div class="hiddencontent">
-            <p>We don't know the actual answer to this 😅</p>
+            <p>{{ update.content }}</p>
         </div>
     </div>
-
-</br>
-</br>
-    <!-- Update 2 -->
-    <h1 class = "EnlistHeaders"> Registration Schedule and Start of Classes for the First Semester, School Year 2020-2021</h1>
-    <p class = "EnlistDate"> Posted: August 20,2020 </p>
-    <div class = "EnlistButtonsFlex">
-        <div class="perEnlistflex">
-            <button type="button" class="collapsible"></button>
-            <h4 class = "EnlistCaption"> Click here to view the memo </h4>
-        </div>
-        <div class="hiddencontent">
-            <p>We don't know the actual answer to this 😅</p>
-        </div>
-    </div>
+    {% endfor %}
 
     <!--Copyright & Navigation Triangles-->
     <p class = "bottom-copyright" id = "bottom"> (c) Copyright 2006 Ateneo Integrated Student Information System. Ateneo de Manila University. All Rights Reserved.</p>

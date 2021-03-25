@@ -47,6 +47,18 @@ class FaqCategory(db.Model):
     def __repr__(self):
         return f"faq_category {self.id}\n{self.name}"
 
+class EnlistmentUpdate(db.Model):
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    title = db.Column(db.String(200), nullable=False)
+    date = db.Column(db.DateTime, nullable=False)
+    prompt = db.Column(db.String(100), nullable=False)
+    content = db.Column(db.Text, nullable=False)
+
+    def __repr__(self):
+        return f"enlistment_update {self.id}\n\
+            faq {self.title}\n\
+            {self.prompt}"
+
 faqs = {category.name: FAQ.query.filter(FAQ.category_id==category.id) for category in FaqCategory.query.all()}
 
 @app.route('/')
@@ -63,7 +75,7 @@ def announcements():
 
 @app.route('/enlistment_updates')
 def enlistment_updates():
-    return render_template('EnlistmentUpdatesPage.html')
+    return render_template('EnlistmentUpdatesPage.html', updates=EnlistmentUpdate.query.all())
 
 @app.route('/faq')
 def faq():
