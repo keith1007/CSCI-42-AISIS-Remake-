@@ -1,10 +1,13 @@
 from datetime import date
-from application import db, Announcement
-
-Announcement.query.delete()
+from application import db, Announcement, FaqCategory, FAQ
 
 db.create_all()
 
+Announcement.query.delete()
+FaqCategory.query.delete()
+FAQ.query.delete()
+
+# FOR ANNOUNCEMENTS
 db.session.add(
 	Announcement(
 		title='Deadline for Submission by Undergraduate Students of Applications for Double Degree, effective SY 2021-2022',
@@ -53,4 +56,119 @@ db.session.add(
 	)
 )
 
+# FOR FAQ RELATED DATA
+faq_cat_getting_started = FaqCategory(name="Getting Started")
+db.session.add(faq_cat_getting_started)
+
+faq_cat_online_enlistment = FaqCategory(name="Online Enlistment")
+db.session.add(faq_cat_online_enlistment)
+
+faq_cat_online_assessment = FaqCategory(name="Online Assessment")
+db.session.add(faq_cat_online_assessment)
+
+faq_cat_payment = FaqCategory(name="Payment")
+db.session.add(faq_cat_payment)
+
+faq_cat_other_links = FaqCategory(name="Other Links")
+db.session.add(faq_cat_other_links)
+
+dummy_message = "We don't know the actual answer to this 😅"
+
+db.session.add(
+    FAQ(
+        question="Charting a Re-imagined Path: Adaptive Teaching and Learning in the Loyola Schools 2020-2021",
+        answer=dummy_message,
+        category=faq_cat_getting_started
+    )
+)
+
+db.session.add(
+    FAQ(
+        question="Code of Academic Integrity",
+        answer=dummy_message,
+        category=faq_cat_getting_started
+    )
+)
+
+db.session.add(
+    FAQ(
+        question="Undergraduate Student Handbook 2018 Edition",
+        answer=dummy_message,
+        category=faq_cat_getting_started
+    )
+)
+
+db.session.add(
+    FAQ(
+        question="AISIS Online FAQs",
+        answer=dummy_message,
+        category=faq_cat_getting_started
+    )
+)
+
+db.session.add(
+    FAQ(
+        question="How to Enlist Online",
+        answer=dummy_message,
+        category=faq_cat_online_enlistment
+    )
+)
+
+db.session.add(
+    FAQ(
+        question="Loyola Schools Directory",
+        answer=dummy_message,
+        category=faq_cat_online_enlistment
+    )
+)
+
+db.session.add(
+    FAQ(
+        question="RegCom: Procedures, Batching Schedule, & FAQs",
+        answer=dummy_message,
+        category=faq_cat_online_enlistment
+    )
+)
+
+db.session.add(
+    FAQ(
+        question="Online Enlistment Guidelines",
+        answer=dummy_message,
+        category=faq_cat_online_enlistment
+    )
+)
+
+db.session.add(
+    FAQ(
+        question="Print your Assessment Forms at Home",
+        answer=dummy_message,
+        category=faq_cat_online_assessment
+    )
+)
+
+db.session.add(
+    FAQ(
+        question="Tuition Payment Options for Interssion SY 2020-2021",
+        answer=dummy_message,
+        category=faq_cat_payment
+    )
+)
+
+db.session.add(
+    FAQ(
+        question="Moodle",
+        answer=dummy_message,
+        category=faq_cat_other_links
+    )
+)
+
+db.session.add(
+    FAQ(
+        question="Ateneo Website",
+        answer=dummy_message,
+        category=faq_cat_other_links
+    )
+)
+
+# commit
 db.session.commit()

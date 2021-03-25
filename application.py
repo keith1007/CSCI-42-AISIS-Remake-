@@ -26,6 +26,29 @@ class Announcement(db.Model):
             {self.date}\n  \
             {self.body}"
 
+class FAQ(db.Model):
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    question = db.Column(db.String(120), nullable=False)
+    answer = db.Column(db.Text, nullable=False)
+
+    category_id = db.Column(db.Integer, db.ForeignKey('faq_category.id'), nullable=False)
+    category = db.relationship('FaqCategory', backref=db.backref('faqs', lazy=True))
+
+    def __repr__(self):
+        return f"faq_category {self.category_id}\n\
+            faq {self.id}\n\
+            {self.question}\n\
+            {self.answer}"
+
+class FaqCategory(db.Model):
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    name = db.Column(db.String(120), nullable=False)
+
+    def __repr__(self):
+        return f"faq_category {self.id}\n{self.name}"
+
+faqs = {category.name: FAQ.query.filter(FAQ.category_id==category.id) for category in FaqCategory.query.all()}
+
 @app.route('/')
 def index():
     # print('LOOKIE HERE', type(Announcement.query.all()))
@@ -44,7 +67,7 @@ def enlistment_updates():
 
 @app.route('/faq')
 def faq():
-    return render_template('FAQPage.html')
+    return render_template('FAQPage.html', faqs=faqs)
 
 @app.route('/student_portal')
 def student_portal():
