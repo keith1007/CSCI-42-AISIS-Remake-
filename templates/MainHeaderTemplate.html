@@ -39,7 +39,7 @@
                         <img src="../static/images/magglass.png" id="maggy" alt="search button">
                     </a>
                 </div>  
-                <a href="logout" >SIGN OUT</a>
+                <a href="/logout" >SIGN OUT</a>
             </div> 
         </div>
     </header>
@@ -47,10 +47,10 @@
     <!-- 4 Buttons = Announcements, FAQs, Enlist Updates, Atenean Portal -->
     <header class = "main-selector-bar">
         <div class = "mainselectorflex">
-            <a href="announcements" class = "top4buttons" id = "announcebutton">Announcements</a>
-            <a href="faq" class = "top4buttons" id = "FAQbutton">Frequently Asked</a>
-            <a href="enlistment_updates" class = "top4buttons" id = "enlistupdatesbutton">Enlistment Updates</a>
-            <a href={{ 'student_portal' if 'username' in session else '#'}} class = "top4buttons" id = "studentportalhomebutton">Atenean Portal</a>
+            <a href="/announcements" class = "top4buttons" id = "announcebutton">Announcements</a>
+            <a href="/faq" class = "top4buttons" id = "FAQbutton">Frequently Asked</a>
+            <a href="/enlistment_updates" class = "top4buttons" id = "enlistupdatesbutton">Enlistment Updates</a>
+            <a href={{ '/student_portal' if 'username' in session else '#'}} class = "top4buttons" id = "studentportalhomebutton">Atenean Portal</a>
         </div>
     </header> 
 

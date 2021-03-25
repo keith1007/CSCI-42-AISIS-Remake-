@@ -39,13 +39,15 @@
 
     <!-- FOR THIS SEMESTER -->
     <h1 class = "PortalHeaders"> for <b>this semester</b></h1>
-    <div class="card">
-        <div class="cardlines">
-            <h2 class="portaltextheader">My Currently Enrolled Classes</h2>
-            <br/>
-            <p class="content">View your current semester subjects' syllabi</p>
-        </div>
-    </div>
+	<a href={{ request.path + "/enrolled_classes" }}>
+	    <div class="card">
+	        <div class="cardlines">
+	            <h2 class="portaltextheader">My Currently Enrolled Classes</h2>
+	            <br/>
+	            <p class="content">View your current semester subjects' syllabi</p>
+	        </div>
+	    </div>
+    </a>
 
     <div class="card">
         <div class="cardlines">

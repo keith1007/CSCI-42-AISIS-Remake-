@@ -45,11 +45,14 @@ def login():
 
 @app.route('/logout')
 def logout():
-    prev_route = request.referrer.split('/')[-1]
+    prev_route = request.referrer.lstrip(request.url_root)
     if 'username' in session:
         session.pop('username')
-    if prev_route == 'student_portal':
-        return redirect(url_for('announcements'))
+    if prev_route.split('/')[0] == 'student_portal':
+        return redirect(url_for('index'))
     else:
-        return redirect(url_for(prev_route))
+        return redirect(prev_route)
 
+@app.route('/student_portal/enrolled_classes')
+def enrolled_classes():
+    return render_template('MyCurrentlyEnrolledClassesPage.html')
