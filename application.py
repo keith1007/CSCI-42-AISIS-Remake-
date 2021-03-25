@@ -6,20 +6,37 @@ from flask import (
     request,
     session
 )
+from flask_sqlalchemy import SQLAlchemy
 
 
 app = Flask(__name__)
-
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
+db = SQLAlchemy(app)
 
+class Announcement(db.Model):
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    title = db.Column(db.String(120), nullable=False)
+    date = db.Column(db.DateTime, nullable=False)
+    body = db.Column(db.Text, nullable=False)
+
+    def __repr__(self):
+        return f"post {self.id}\n \
+            {self.title}\n \
+            {self.date}\n  \
+            {self.body}"
 
 @app.route('/')
 def index():
+    # print('LOOKIE HERE', type(Announcement.query.all()))
     return redirect(url_for('announcements'))
 
 @app.route('/announcements')
 def announcements():
-    return render_template('AnnouncementsPage.html')
+    return render_template(
+        'AnnouncementsPage.html',
+        announcements=Announcement.query.all()
+    )
 
 @app.route('/enlistment_updates')
 def enlistment_updates():
