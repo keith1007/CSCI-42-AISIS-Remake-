@@ -1,5 +1,5 @@
-/*Enlistment Container CSS*/
-.EnlistmentContainer{
+/*Update Container CSS*/
+.UpdateContainer{
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -8,8 +8,9 @@
     position: relative;
 }
 
+
 /* Grey Header */
-.portaltextheader {
+.updatetextheader {
     text-align: left;
     color: rgb(34, 63, 137);
     font-size: 20px;
@@ -23,74 +24,72 @@
     margin: 5px;
 }
 
-.top-enlistment-header {
+.top-update-header {
     width: 100%;
     background-color: #EBE7E7;
-    border-radius: 5px;
     box-sizing: border-box;
+    border-radius: 5px;
     margin: 15px 0 20px 0;
     padding: 10px 20px 10px 20px;
 }
 
-/* The Actual Enlistment Table */
-.enlistablediv{
+/* Update Info Proper */
+.InfoContainer {
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    overflow-y: auto;    
+    box-sizing: border-box;
+    padding: 0 100px 0 100px;
 }
 
-.tablecontentsdiv{
-    display: flex;
-    overflow-y: auto;
+.InfoContainer>div {
+    margin: 5px;
 }
 
-table {
-    border-collapse:collapse;
-    width: 90%;
-    align-self: center;
-    border-spacing: 1px 2px;
-    color: black;
-  }
+.UpdateHeaders {
+    font-size: 24px;
+    color:  rgb(34, 63, 137);
+    margin: 2px 0 2px 80px;
+    margin-top: 20px;
+    font-weight: bold;
+}
 
-th {
-    border: 2px solid white;
-    text-align: center;
-    padding: 8px;
+.note {
+    font-size: 10px;
+    white-space: normal;
+    margin: 0px 0 2px 80px;
+    color:  rgb(34, 63, 137);
+}
+
+/* Fields and Input */
+.fields {
     font-size: 14px;
-    background-color: #bdd7ee;
-}  
-
-td {
-    border: 2px solid white;
-    text-align: center;
-    padding: 3px;
-    font-size: 12px;
-    background-color: #f3f3f3;
+    color:  rgb(34, 63, 137);
+    font-weight: bold;
+    flex: 1;
+    text-align: right;
+    /* margin: 10px; */
+    line-height: 3;
 }
 
-.enlist-button{
-    background-color: #223F89;
-    width: 90%;
-    color: white;
+input[type=text] {
+    width: 60%;
+    padding: 2px 2px;
+    color:  rgb(34, 63, 137);
+    font-weight: normal;
 }
 
-.enlist-button:active{
-    background-color: #2C52B1;
-    transform: scale(0.95);
-    transition: 0.15s;
+.fieldinput {
+    /* margin-top: 5px; */
+    font-size: 14px;
+    flex: 1.5;
+    line-height: 3;
+    color:  rgb(34, 63, 137);
 }
 
-.delist-button{
-    background-color: #590925;
-    width: 90%;
-    color: white;
-}
-
-.delist-button:active{
-    background-color: #760C31;
-    transform: scale(0.95);
-    transition: 0.15s;
+/* Click to Copy Button */
+.boop {
+    margin: 2px 0 2px 80px;
+    width:fit-content;
+    padding: 2px 10px;
 }
 
 /*Back to Portal Button*/
@@ -108,6 +107,11 @@ td {
 .back2portalbutton:hover {
     transform: scale(1.05);
     transition: 0.2s;
+}
+
+.back2portalbutton:active {
+    background-color: #223F89;
+    color: white;
 }
 
 
