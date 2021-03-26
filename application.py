@@ -239,4 +239,7 @@ def change_password():
 admin = Admin(app, name='microblog', template_mode='bootstrap3')
 
 admin.add_view(ModelView(Announcement, db.session))
+admin.add_view(ModelView(FAQ, db.session))
+admin.add_view(ModelView(FaqCategory, db.session))
+admin.add_view(ModelView(EnlistmentUpdate, db.session))
 admin.add_view(ModelView(Student, db.session))
