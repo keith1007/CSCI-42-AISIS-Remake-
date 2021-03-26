@@ -229,8 +229,13 @@ def update_student_info():
             db.session.commit()
     return render_template('UpdateStudentInfo.html', student_info=Student.query.filter_by(id=session['username']).first())
 
-@app.route('/student_portal/change_password')
+@app.route('/student_portal/change_password', methods=['POST', 'GET'])
 def change_password():
+    if request.method == 'POST':
+        if request.form['old_password'] == Student.query.filter_by(id=session['username']).first().password and \
+        request.form['new_password'] == request.form['new_password_repeated']:
+            Student.query.filter_by(id=session['username']).first().password = request.form['new_password']
+            db.session.commit()
     return render_template('ChangePassword.html')
 
 admin = Admin(app, name='microblog', template_mode='bootstrap3')
