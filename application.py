@@ -65,6 +65,10 @@ class EnlistmentUpdate(db.Model):
 
 class Student(db.Model):            
     id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100), nullable=False)
+    year = db.Column(db.Integer, nullable=False)
+    is_regular = db.Column(db.Boolean, nullable=False)
+    degree = db.Column(db.String(100), nullable=False)
     password = db.Column(db.Text, nullable=False)
     primary_mobile = db.Column(PhoneNumberType, nullable=False)
     secondary_email = db.Column(EmailType, nullable=False)
@@ -183,7 +187,7 @@ def faq():
 
 @app.route('/student_portal')
 def student_portal():
-    return render_template('StudentPortalPage.html')               
+    return render_template('StudentPortalPage.html', student_info=Student.query.filter_by(id=session['username']).first())               
 
 @app.route('/login', methods=['POST', 'GET'])
 def login():

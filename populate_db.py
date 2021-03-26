@@ -199,6 +199,10 @@ db.session.add(
 db.session.add(
     Student(
         id = 420699,
+        name = 'Rick Astley',
+        year = 2,
+        is_regular = True,
+        degree = 'BS Management',
         password = '1234password',
         primary_mobile = '09999999999',
         secondary_email = 'dude@obf.ateneo.edu',
@@ -223,6 +227,10 @@ db.session.add(
 db.session.add(
     Student(
         id = 000000,
+        name = 'Shrekit Ralph',
+        year = 4,
+        is_regular = False,
+        degree = 'BFA Information Design',
         password = 'foo',
         primary_mobile = '09999999991',
         secondary_email = 'dood@obf.ateneo.edu',
