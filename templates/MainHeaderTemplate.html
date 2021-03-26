@@ -81,6 +81,7 @@
 	            <button type=submit class="LoginModalButtons" id = "LoginButton" >Login</button>
 	            
 	            <!--Comment these out if there's no error LOL-->
+				{% if session['login_failed'] %}
 	            <p id = "RedAsterisk">*</p>
 	            <p id = "InvalidPassword">* Invalid Password</p>
 	            
@@ -88,6 +89,8 @@
 	                <p id = "forgotinfotext" >Forgot your Username/Password?</p>
 	                <button type="submit" class="LoginModalButtons" id = "RequestResetButton">Request a Reset</button>
 	            </div>
+	            {% do session.update({'login_failed': False}) %}
+	            {% endif %}
 	            <!--End of Error Chunk-->
         	</div>
         </form>
