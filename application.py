@@ -223,9 +223,7 @@ def enlistment():
 def update_student_info():
     if request.method == 'POST':
         for k, v in request.form.items():
-            print(getattr(Student.query.filter_by(id = session['username']).first(), k))
             setattr(Student.query.filter_by(id = session['username']).first(), k, v)
-            print(getattr(Student.query.filter_by(id = session['username']).first(), k))
             db.session.commit()
     return render_template('UpdateStudentInfo.html', student_info=Student.query.filter_by(id=session['username']).first())
 
