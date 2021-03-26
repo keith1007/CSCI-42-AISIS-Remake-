@@ -119,3 +119,7 @@ def enlistment():
 @app.route('/student_portal/update_student_info')
 def update_student_info():
     return render_template('UpdateStudentInfo.html')
+
+@app.route('/student_portal/change_password')
+def change_password():
+    return render_template('ChangePassword.html')

@@ -138,14 +138,16 @@
     </div>    
 
     <!-- MANAGE YOUR ACCOUNT -->
-    <h1 class = "PortalHeaders">manage <b>your account</b></h1>
-    <div class="card">
-        <div class="cardlines">
-            <h2 class="portaltextheader">Change Password</h2>
-            <br/>
-            <p class="content">Password must be at least 8 characters long</p>
-        </div>
-    </div>
+    <a href={{ request.path + "/change_password" }}>
+	    <h1 class = "PortalHeaders">manage <b>your account</b></h1>
+	    <div class="card">
+	        <div class="cardlines">
+	            <h2 class="portaltextheader">Change Password</h2>
+	            <br/>
+	            <p class="content">Password must be at least 8 characters long</p>
+	        </div>
+	    </div>
+    </a>
 
     <!--Copyright & Navigation Triangles-->
     <p class = "bottom-copyright" id = "bottom"> (c) Copyright 2006 Ateneo Integrated Student Information System. Ateneo de Manila University. All Rights Reserved.</p>
