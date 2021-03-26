@@ -25,10 +25,10 @@ class Announcement(db.Model):
     body = db.Column(db.Text, nullable=False)
 
     def __repr__(self):
-        return f"post {self.id}\n \
-            {self.title}\n \
-            {self.date}\n  \
-            {self.body}"
+        return f"""post {self.id}
+        {self.title}
+        {self.date}
+        {self.body}"""
 
 class FAQ(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
@@ -39,17 +39,18 @@ class FAQ(db.Model):
     category = db.relationship('FaqCategory', backref=db.backref('faqs', lazy=True))
 
     def __repr__(self):
-        return f"faq_category {self.category_id}\n\
-            faq {self.id}\n\
-            {self.question}\n\
-            {self.answer}"
+        return f"""faq_category {self.category_id}
+        faq {self.id}
+        {self.question}
+        {self.answer}"""
 
 class FaqCategory(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     name = db.Column(db.String(120), nullable=False)
 
     def __repr__(self):
-        return f"faq_category {self.id}\n{self.name}"
+        return f"""faq_category {self.id}
+        {self.name}"""
 
 class EnlistmentUpdate(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
@@ -59,9 +60,9 @@ class EnlistmentUpdate(db.Model):
     content = db.Column(db.Text, nullable=False)
 
     def __repr__(self):
-        return f"enlistment_update {self.id}\n\
-            faq {self.title}\n\
-            {self.prompt}"
+        return f"""enlistment_update {self.id}
+        faq {self.title}
+        {self.prompt}"""
 
 class Student(db.Model):            
     id = db.Column(db.Integer, primary_key=True)
@@ -161,13 +162,12 @@ class Student(db.Model):
     mothers_mobile_number = db.Column(PhoneNumberType)
 
     def __repr__(self):
-        return f'<{self.id}, {self.password}>'
+        return f'{self.id}'
 
 faqs = {category.name: FAQ.query.filter_by(category_id = category.id) for category in FaqCategory.query.all()}
 
 @app.route('/')
 def index():
-    # print('LOOKIE HERE', type(Announcement.query.all()))
     return redirect(url_for('announcements'))
 
 @app.route('/announcements')
