@@ -13,279 +13,118 @@
             <p class="content">Update your contact information and addresses</p>
         </div>
         
+        <form method="post">
+            <div class = "UpdateHeaders"> STUDENT'S CONTACT INFORMATION </div>
+            <div class = "InfoContainer">
+                <div class = "fields">
+                    <p> Primary Email: </p>
+                    <p> Secondary Email:</p>
+                </div>
+                <div class = "fieldinput">
+                    <p> naruto.uzumaki@obf.areneow.edu</p>
+                    <p> <input type="text"> </p>
+                </div>
+                <div class = "fields"> 
+                    <p> Primary Mobile Number: </p>
+                </div>
+                <div class = "fieldinput">
+                    <p> <input type="text"> </p>
+                </div>
+            </div>
 
-        <div class = "UpdateHeaders"> STUDENT'S CONTACT INFORMATION </div>
-        <div class = "InfoContainer">
-            <div class = "fields">
-                <p> Primary Email: </p>
-                <p> Secondary Email:</p>
+            <div class = "UpdateHeaders"> PARENTS'/GUARDIAN'S PERMANENT MAILING ADDRESS </div>
+            <div class = "note"> Note: Changes to Parent's/Guardian's Permanent Mailing Address can only be made through the Office of the Registrar.</div>
+            <div class = "InfoContainer">
+                <div class = "fields">
+                    <p> Unit No. and Building: </p>
+                    <p> Street No.:</p>
+                    <p>Village/Brgy. Name:</p>
+                    <p> City: </p>
+                    <p> Province: </p>
+                    <p> Contact Person: </p>
+                    <p> Mobile Number:</p>
+                </div>
+                <div class = "fieldinput">
+                    <p> {{ student_info.guardians_unit_no }} </p>
+                    <p> {{ student_info.guardians_building }} </p>
+                    <p> {{ student_info.guardians_street_no }} </p>
+                    <p> {{ student_info.guardians_village_brgy_name }} </p>
+                    <p> {{ student_info.guardians_city}} </p>
+                    <p> {{ student_info.guardians_province }}</p>
+                    <p> {{ '%s and %s' % (student_info.fathers_name, student_info.mothers_name) }} </p>
+                    <p> {{ student_info.guardians_mobile_number }} </p>
+                </div>
+                <div class = "fields">
+                    <br>
+                    <p> Street Name: </p>
+                    <p> Municipality:</p>
+                    <p>Zip/Postal Code:</p>
+                    <p> Country: </p>
+                    <p> Email: </p>
+                    <p> Landline:</p>
+                </div>
+                <div class = "fieldinput">
+                    <br>
+                    <p> {{ student_info.guardians_street_name }} </p>
+                    <p> {{ student_info.guardians_municipality }} </p>
+                    <p> {{ student_info.guardians_zip_code }} </p>
+                    <p> {{ student_info.guardians_country }} </p>
+                    <p> {{ student_info.guardians_email }}</p>
+                    <p> {{ student_info.guardians_landline }} </p>
+                </div>
             </div>
-            <div class = "fieldinput">
-                <p> naruto.uzumaki@obf.areneow.edu</p>
-                <p> <input type="text"> </p>
-            </div>
-            <div class = "fields"> 
-                <p> Primary Mobile Number: </p>
-            </div>
-            <div class = "fieldinput">
-                <p> <input type="text"> </p>
-            </div>
-        </div>
 
-        <div class = "UpdateHeaders"> PARENTS'/GUARDIAN'S PERMANENT MAILING ADDRESS </div>
-        <div class = "note"> Note: Changes to Parent's/Guardian's Permanent Mailing Address can only be made through the Office of the Registrar.</div>
-        <div class = "InfoContainer">
-            <div class = "fields">
-                <p> Unit No. and Building: </p>
-                <p> Street No.:</p>
-                <p>Village/Brgy. Name:</p>
-                <p> City: </p>
-                <p> Province: </p>
-                <p> Contact Person: </p>
-                <p> Mobile Number:</p>
+            {% for header in ['CURRENT ADDRESS', 'WEEKEND ADDRESS', 'EMERGENCY ADDRESS', "FATHER'S ADDRESS", "MOTHER'S ADDRESS"] %}
+            <div class = "UpdateHeaders"> {{ header }} </div>
+            <button type="button" class="boop">Click to copy Parent's/Guardian's permanent mailing address</button>
+            <div class = "InfoContainer">
+                <div class = "fields">
+                    <p> Unit No. and Building: </p>
+                    <p> Street No.:</p>
+                    <p>Village/Brgy. Name:</p>
+                    <p> City: </p>
+                    <p> Province: </p>
+                    <p> Contact Person: </p>
+                    <p> Mobile Number:</p>
+                </div>
+                <div class = "fieldinput">
+                    <p> <input type="text" name={{ '%s_unit_no' % header.split()[0].replace("'","").lower() }}> </p>
+                    <p> <input type="text" name={{ '%s_building' % header.split()[0].replace("'","").lower() }}> </p>
+                    <p> <input type="text" name={{ '%s_village_brgy_name' % header.split()[0].replace("'","").lower() }}> </p>
+                    <p> <input type="text" name={{ '%s_province' % header.split()[0].replace("'","").lower() }}> </p>
+                    <p> <input type="text"> </p>
+                    {% if header == "FATHER's ADDRESS" %}
+                    <p> {{ student_info.fathers_name }}</p>
+                    {% else %}
+                    <p> {{ student_info.mothers_name }}</p>
+                    {% endif %}
+                    <p> <input type="text" name={{ '%s_mobile_number' % header.split()[0].replace("'","").lower() }}> </p>
+                </div>
+                <div class = "fields">
+                    <br>
+                    <p> Street Name: </p>
+                    <p> Municipality:</p>
+                    <p>Zip/Postal Code:</p>
+                    <p> Country: </p>
+                    <p> Email: </p>
+                    <p> Landline:</p>
+                </div>
+                <div class = "fieldinput">
+                    <br>
+                    <p> <input type="text"> </p>
+                    <p> <input type="text"> </p>
+                    <p> <input type="text"> </p>
+                    <p> <input type="text"> </p>
+                    <p> <input type="text"></p>
+                    <p> <input type="text"> </p>
+                </div>
             </div>
-            <div class = "fieldinput">
-                <p> {{ student_info.guardians_unit_no }} </p>
-                <p> {{ student_info.guardians_building }} </p>
-                <p> {{ student_info.guardians_street_no }} </p>
-                <p> {{ student_info.guardians_village_brgy_name }} </p>
-                <p> {{ student_info.guardians_city}} </p>
-                <p> {{ student_info.guardians_province }}</p>
-                <p> {{ '%s and %s' % (student_info.fathers_name, student_info.mothers_name) }} </p>
-                <p> {{ student_info.guardians_mobile_number }} </p>
-            </div>
-            <div class = "fields">
-                <br>
-                <p> Street Name: </p>
-                <p> Municipality:</p>
-                <p>Zip/Postal Code:</p>
-                <p> Country: </p>
-                <p> Email: </p>
-                <p> Landline:</p>
-            </div>
-            <div class = "fieldinput">
-                <br>
-                <p> {{ student_info.guardians_street_name }} </p>
-                <p> {{ student_info.guardians_municipality }} </p>
-                <p> {{ student_info.guardians_zip_code }} </p>
-                <p> {{ student_info.guardians_country }} </p>
-                <p> {{ student_info.guardians_email }}</p>
-                <p> {{ student_info.guardians_landline }} </p>
-            </div>
-        </div>
+            {% endfor %}
 
-        <div class = "UpdateHeaders"> CURRENT ADDRESS </div>
-        <button type="button" class="boop">Click to copy Parent's/Guardian's permanent mailing address</button>
-        <div class = "InfoContainer">
-            <div class = "fields">
-                <p> Unit No. and Building: </p>
-                <p> Street No.:</p>
-                <p>Village/Brgy. Name:</p>
-                <p> City: </p>
-                <p> Province: </p>
-                <p> Contact Person: </p>
-                <p> Mobile Number:</p>
+            <div class="boop"> 
+                <br> <button type="submit" class="boop">Confirm Student Information</button>
             </div>
-            <div class = "fieldinput">
-                <p> <input type="text"> </p>
-                <p> <input type="text"> </p>
-                <p> <input type="text"> </p>
-                <p> <input type="text"> </p>
-                <p> <input type="text"> </p>
-                <p> Pepe, Our Lord and Savior</p>
-                <p> <input type="text"> </p>
-            </div>
-            <div class = "fields">
-                <br>
-                <p> Street Name: </p>
-                <p> Municipality:</p>
-                <p>Zip/Postal Code:</p>
-                <p> Country: </p>
-                <p> Email: </p>
-                <p> Landline:</p>
-            </div>
-            <div class = "fieldinput">
-                <br>
-                <p> <input type="text"> </p>
-                <p> <input type="text"> </p>
-                <p> <input type="text"> </p>
-                <p> <input type="text"> </p>
-                <p> <input type="text"></p>
-                <p> <input type="text"> </p>
-            </div>
-        </div>
-
-        <div class = "UpdateHeaders"> WEEKEND ADDRESS </div>
-        <button type="button" class="boop">Click to copy Parent's/Guardian's permanent mailing address</button>
-        <div class = "InfoContainer">
-            <div class = "fields">
-                <p> Unit No. and Building: </p>
-                <p> Street No.:</p>
-                <p>Village/Brgy. Name:</p>
-                <p> City: </p>
-                <p> Province: </p>
-                <p> Contact Person: </p>
-                <p> Mobile Number:</p>
-            </div>
-            <div class = "fieldinput">
-                <p> <input type="text"> </p>
-                <p> <input type="text"> </p>
-                <p> <input type="text"> </p>
-                <p> <input type="text"> </p>
-                <p> <input type="text"> </p>
-                <p> Pepe, Our Lord and Savior</p>
-                <p> <input type="text"> </p>
-            </div>
-            <div class = "fields">
-                <br>
-                <p> Street Name: </p>
-                <p> Municipality:</p>
-                <p>Zip/Postal Code:</p>
-                <p> Country: </p>
-                <p> Email: </p>
-                <p> Landline:</p>
-            </div>
-            <div class = "fieldinput">
-                <br>
-                <p> <input type="text"> </p>
-                <p> <input type="text"> </p>
-                <p> <input type="text"> </p>
-                <p> <input type="text"> </p>
-                <p> <input type="text"></p>
-                <p> <input type="text"> </p>
-            </div>
-        </div>
-
-        <div class = "UpdateHeaders"> EMERGENCY ADDRESS </div>
-        <button type="button" class="boop">Click to copy Parent's/Guardian's permanent mailing address</button>
-        <div class = "InfoContainer">
-            <div class = "fields">
-                <p> Unit No. and Building: </p>
-                <p> Street No.:</p>
-                <p>Village/Brgy. Name:</p>
-                <p> City: </p>
-                <p> Province: </p>
-                <p> Contact Person: </p>
-                <br>
-                <p> Mobile Number:</p>
-            </div>
-            <div class = "fieldinput">
-                <p> <input type="text"> </p>
-                <p> <input type="text"> </p>
-                <p> <input type="text"> </p>
-                <p> <input type="text"> </p>
-                <p> <input type="text"> </p>
-                <p> <input type="text"> </p>
-                <br>
-                <p> <input type="text"> </p>
-            </div>
-            <div class = "fields">
-                <br>
-                <p> Street Name: </p>
-                <p> Municipality:</p>
-                <p>Zip/Postal Code:</p>
-                <p> Country: </p>
-                <p> Relationship </p>
-                <p> Email: </p>
-                <p> Landline:</p>
-            </div>
-            <div class = "fieldinput">
-                <br>
-                <p> <input type="text"> </p>
-                <p> <input type="text"> </p>
-                <p> <input type="text"> </p>
-                <p> <input type="text"> </p>
-                <p> <input type="text"> </p>
-                <p> <input type="text"> </p>
-                <p> <input type="text"> </p>
-            </div>
-        </div>
-
-        <div class = "UpdateHeaders"> FATHER'S ADDRESS </div>
-        <button type="button" class="boop">Click to copy Parent's/Guardian's permanent mailing address</button>
-        <div class = "InfoContainer">
-            <div class = "fields">
-                <p> Unit No. and Building: </p>
-                <p> Street No.:</p>
-                <p>Village/Brgy. Name:</p>
-                <p> City: </p>
-                <p> Province: </p>
-                <p> Contact Person: </p>
-                <p> Mobile Number:</p>
-            </div>
-            <div class = "fieldinput">
-                <p> <input type="text"> </p>
-                <p> <input type="text"> </p>
-                <p> <input type="text"> </p>
-                <p> <input type="text"> </p>
-                <p> <input type="text"> </p>
-                <p> Dafader Hokage </p>
-                <p> <input type="text"> </p>
-            </div>
-            <div class = "fields">
-                <br>
-                <p> Street Name: </p>
-                <p> Municipality:</p>
-                <p>Zip/Postal Code:</p>
-                <p> Country: </p>
-                <p> Email: </p>
-                <p> Landline:</p>
-            </div>
-            <div class = "fieldinput">
-                <br>
-                <p> <input type="text"> </p>
-                <p> <input type="text"> </p>
-                <p> <input type="text"> </p>
-                <p> <input type="text"> </p>
-                <p> <input type="text"></p>
-                <p> <input type="text"> </p>
-            </div>
-        </div>
-
-        <div class = "UpdateHeaders"> MOTHER'S ADDRESS </div>
-        <button type="button" class="boop">Click to copy Parent's/Guardian's permanent mailing address</button>
-        <div class = "InfoContainer">
-            <div class = "fields">
-                <p> Unit No. and Building: </p>
-                <p> Street No.:</p>
-                <p>Village/Brgy. Name:</p>
-                <p> City: </p>
-                <p> Province: </p>
-                <p> Contact Person: </p>
-                <p> Mobile Number:</p>
-            </div>
-            <div class = "fieldinput">
-                <p> <input type="text"> </p>
-                <p> <input type="text"> </p>
-                <p> <input type="text"> </p>
-                <p> <input type="text"> </p>
-                <p> <input type="text"> </p>
-                <p> Damawder Hokage </p>
-                <p> <input type="text"> </p>
-            </div>
-            <div class = "fields">
-                <br>
-                <p> Street Name: </p>
-                <p> Municipality:</p>
-                <p>Zip/Postal Code:</p>
-                <p> Country: </p>
-                <p> Email: </p>
-                <p> Landline:</p>
-            </div>
-            <div class = "fieldinput">
-                <br>
-                <p> <input type="text"> </p>
-                <p> <input type="text"> </p>
-                <p> <input type="text"> </p>
-                <p> <input type="text"> </p>
-                <p> <input type="text"></p>
-                <p> <input type="text"> </p>
-            </div>
-        </div>
-
-        <div class="boop"> 
-            <br> <button type="button" class="boop">Confirm Student Information</button>
-        </div>
+        <form>
 
         
         <!--Return Home to Student Home Page Button-->

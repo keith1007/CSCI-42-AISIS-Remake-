@@ -159,7 +159,7 @@ class Student(db.Model):
     def __repr__(self):
         return f'<{self.id}, {self.password}>'
 
-faqs = {category.name: FAQ.query.filter(FAQ.category_id==category.id) for category in FaqCategory.query.all()}
+faqs = {category.name: FAQ.query.filter_by(category_id = category.id) for category in FaqCategory.query.all()}
 
 @app.route('/')
 def index():
@@ -215,8 +215,14 @@ def enrolled_classes():
 def enlistment():
     return render_template('MyCurrentlyEnrolledClassesPage.html')
 
-@app.route('/student_portal/update_student_info')
+@app.route('/student_portal/update_student_info', methods=['POST', 'GET'])
 def update_student_info():
+    if request.method == 'POST':
+        for k, v in request.form.items():
+            print(getattr(Student.query.filter_by(id = session['username']).first(), k))
+            setattr(Student.query.filter_by(id = session['username']).first(), k, v)
+            print(getattr(Student.query.filter_by(id = session['username']).first(), k))
+            db.session.commit()
     return render_template('UpdateStudentInfo.html', student_info=Student.query.filter_by(id=session['username']).first())
 
 @app.route('/student_portal/change_password')
