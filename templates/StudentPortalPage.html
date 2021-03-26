@@ -28,14 +28,16 @@
             <p class="content">Google Account Information</p>
         </div>
     </div>
-
-    <div class="card">
-        <div class="cardlines">
-            <h2 class="portaltextheader">Update Student Information</h2>
-            <br/>
-            <p class="content">Update your contact information and addresses</p>
-        </div>
-    </div>
+    
+	<a href={{ request.path + "/update_student_info" }}>
+	    <div class="card">
+	        <div class="cardlines">
+	            <h2 class="portaltextheader">Update Student Information</h2>
+	            <br/>
+	            <p class="content">Update your contact information and addresses</p>
+	        </div>
+	    </div>
+    </a>
 
     <!-- FOR THIS SEMESTER -->
     <h1 class = "PortalHeaders"> for <b>this semester</b></h1>

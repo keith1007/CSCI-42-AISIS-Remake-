@@ -12,6 +12,7 @@ from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
+app.jinja_env.add_extension('jinja2.ext.do')
 db = SQLAlchemy(app)
 
 class Announcement(db.Model):
@@ -85,14 +86,16 @@ def faq():
 def student_portal():
     return render_template('StudentPortalPage.html')               
 
-@app.route('/login', methods=['POST'])
+@app.route('/login', methods=['POST', 'GET'])
 def login():
     if request.form['username'] == 'foo' and \
     request.form['password'] == 'bar':
         session['username'] = request.form['username']
+        session['login_failed'] = False
     if 'username' in session:
         return redirect(url_for('student_portal'))
     else:
+        session['login_failed'] = True
         return redirect(url_for(request.referrer.split('/')[-1]))
 
 @app.route('/logout')
@@ -109,7 +112,10 @@ def logout():
 def enrolled_classes():
     return render_template('EnlistmentPage.html')
 
-
 @app.route('/student_portal/enrolled_classes')
 def enlistment():
     return render_template('MyCurrentlyEnrolledClassesPage.html')
+
+@app.route('/student_portal/update_student_info')
+def update_student_info():
+    return render_template('UpdateStudentInfo.html')
