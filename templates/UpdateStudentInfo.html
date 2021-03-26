@@ -45,13 +45,14 @@
                 <p> Mobile Number:</p>
             </div>
             <div class = "fieldinput">
-                <p> NA </p>
-                <p> 420 </p>
-                <p> Pepe's Wonderland </p>
-                <p> Quezon City </p>
-                <p> NCR </p>
-                <p> Pepe, Our Lord and Savior</p>
-                <p> 090569960420 </p>
+                <p> {{ student_info.guardians_unit_no }} </p>
+                <p> {{ student_info.guardians_building }} </p>
+                <p> {{ student_info.guardians_street_no }} </p>
+                <p> {{ student_info.guardians_village_brgy_name }} </p>
+                <p> {{ student_info.guardians_city}} </p>
+                <p> {{ student_info.guardians_province }}</p>
+                <p> {{ '%s and %s' % (student_info.fathers_name, student_info.mothers_name) }} </p>
+                <p> {{ student_info.guardians_mobile_number }} </p>
             </div>
             <div class = "fields">
                 <br>
@@ -64,12 +65,12 @@
             </div>
             <div class = "fieldinput">
                 <br>
-                <p> Deville </p>
-                <p> NA </p>
-                <p> 1441 </p>
-                <p> PHILIPPINES </p>
-                <p> pepedaking@gmail.com</p>
-                <p> 5318008 </p>
+                <p> {{ student_info.guardians_street_name }} </p>
+                <p> {{ student_info.guardians_municipality }} </p>
+                <p> {{ student_info.guardians_zip_code }} </p>
+                <p> {{ student_info.guardians_country }} </p>
+                <p> {{ student_info.guardians_email }}</p>
+                <p> {{ student_info.guardians_landline }} </p>
             </div>
         </div>
 

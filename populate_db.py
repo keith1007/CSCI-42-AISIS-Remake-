@@ -13,12 +13,6 @@ db.drop_all()
 
 db.create_all()
 
-# Announcement.__table__.drop(db)
-# FaqCategory.__table__.drop()
-# FAQ.__table__.drop()
-# EnlistmentUpdate.__table__.drop()
-# Student.__table__.drop()
-
 # FOR ANNOUNCEMENTS
 db.session.add(
 	Announcement(
@@ -228,8 +222,8 @@ db.session.add(
 
 db.session.add(
     Student(
-        id = 420696,
-        password = 'password1234',
+        id = 000000,
+        password = 'foo',
         primary_mobile = '09999999991',
         secondary_email = 'dood@obf.ateneo.edu',
         guardians_unit_no = 1234,
