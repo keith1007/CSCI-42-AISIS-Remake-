@@ -4,15 +4,20 @@ from application import (
     Announcement,
     FaqCategory,
     FAQ,
-    EnlistmentUpdate
+    EnlistmentUpdate,
+    Student
 )
+from flask_sqlalchemy import SQLAlchemy
+
+db.drop_all()
 
 db.create_all()
 
-Announcement.query.delete()
-FaqCategory.query.delete()
-FAQ.query.delete()
-EnlistmentUpdate.query.delete()
+# Announcement.__table__.drop(db)
+# FaqCategory.__table__.drop()
+# FAQ.__table__.drop()
+# EnlistmentUpdate.__table__.drop()
+# Student.__table__.drop()
 
 # FOR ANNOUNCEMENTS
 db.session.add(
@@ -196,5 +201,53 @@ db.session.add(
     )
 )
 
+# FOR STUDENT INFO
+db.session.add(
+    Student(
+        id = 420699,
+        password = '1234password',
+        primary_mobile = '09999999999',
+        secondary_email = 'dude@obf.ateneo.edu',
+        guardians_unit_no = 1234,
+        guardians_building = 'Somebuilding',
+        guardians_street_no= 56,
+        guardians_street_name = 'Stephen Nevada',
+        guardians_village_brgy_name = 'Donut',
+        guardians_municipality = 'NA',
+        guardians_city = 'Kidzone City',
+        guardians_zip_code = 7890,
+        guardians_province = 'Albye',
+        guardians_country = 'Philppines',
+        fathers_name = 'Joe Mama',
+        mothers_name = 'Joes Mama',
+        guardians_email = 'joemama@rickroll.com',
+        guardians_landline = '0521231234',
+        guardians_mobile_number = '09999999999'
+       )
+)
+
+db.session.add(
+    Student(
+        id = 420696,
+        password = 'password1234',
+        primary_mobile = '09999999991',
+        secondary_email = 'dood@obf.ateneo.edu',
+        guardians_unit_no = 1234,
+        guardians_building = 'Somebuilding',
+        guardians_street_no= 56,
+        guardians_street_name = 'Stephen Nevada',
+        guardians_village_brgy_name = 'Donut',
+        guardians_municipality = 'NA',
+        guardians_city = 'Kidzone City',
+        guardians_zip_code = 7890,
+        guardians_province = 'Albye',
+        guardians_country = 'Philppines',
+        fathers_name = 'Joe Mama',
+        mothers_name = 'Joes Mama',
+        guardians_email = 'joemama@rickroll.com',
+        guardians_landline = '0521231234',
+        guardians_mobile_number = '09999999999'
+       )
+)
 # commit
 db.session.commit()
