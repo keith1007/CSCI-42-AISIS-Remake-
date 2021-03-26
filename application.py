@@ -63,13 +63,7 @@ class EnlistmentUpdate(db.Model):
 
 class Student(db.Model):            
     id = db.Column(db.Integer, primary_key=True)
-    password = db.Column(
-        PasswordType(
-            schemes=['pbkdf2_sha512', 'md5_crypt'],
-            deprecated=['md5_crypt']
-        ),
-        nullable=False
-    )
+    password = db.Column(db.Text, nullable=False)
     primary_mobile = db.Column(PhoneNumberType, nullable=False)
     secondary_email = db.Column(EmailType, nullable=False)
 
@@ -161,7 +155,7 @@ class Student(db.Model):
     mothers_mobile_number = db.Column(PhoneNumberType)
 
     def __repr__(self):
-        return f'{self.id}'
+        return f'<{self.id}, {self.password}>'
 
 faqs = {category.name: FAQ.query.filter(FAQ.category_id==category.id) for category in FaqCategory.query.all()}
 
@@ -183,7 +177,7 @@ def enlistment_updates():
 
 @app.route('/faq')
 def faq():
-    return render_template('FAQPage.html')#, faqs=faqs)
+    return render_template('FAQPage.html', faqs=faqs)
 
 @app.route('/student_portal')
 def student_portal():
@@ -191,8 +185,8 @@ def student_portal():
 
 @app.route('/login', methods=['POST', 'GET'])
 def login():
-    if request.form['username'] == 'foo' and \
-    request.form['password'] == 'bar':
+    possible_student = Student.query.filter_by(id = request.form['username']).first()
+    if possible_student and possible_student.password ==  request.form['password']:
         session['username'] = request.form['username']
         session['login_failed'] = False
     if 'username' in session:
