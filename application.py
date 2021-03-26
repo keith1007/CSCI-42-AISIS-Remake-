@@ -8,6 +8,8 @@ from flask import (
 )
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy_utils import EmailType, PhoneNumberType, PasswordType
+from flask_admin import Admin
+from flask_admin.contrib.sqla import ModelView
 
 
 app = Flask(__name__)
@@ -220,3 +222,8 @@ def update_student_info():
 @app.route('/student_portal/change_password')
 def change_password():
     return render_template('ChangePassword.html')
+
+admin = Admin(app, name='microblog', template_mode='bootstrap3')
+
+admin.add_view(ModelView(Announcement, db.session))
+admin.add_view(ModelView(Student, db.session))
