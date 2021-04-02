@@ -164,8 +164,6 @@ class Student(db.Model):
     def __repr__(self):
         return f'{self.id}'
 
-faqs = {category.name: FAQ.query.filter_by(category_id = category.id) for category in FaqCategory.query.all()}
-
 @app.route('/')
 def index():
     return redirect(url_for('announcements'))
@@ -183,7 +181,7 @@ def enlistment_updates():
 
 @app.route('/faq')
 def faq():
-    return render_template('FAQPage.html', faqs=faqs)
+    return render_template('FAQPage.html', faqs={category.name: FAQ.query.filter_by(category_id = category.id) for category in FaqCategory.query.all()})
 
 @app.route('/student_portal')
 def student_portal():
