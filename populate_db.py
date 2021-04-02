@@ -251,5 +251,6 @@ db.session.add(
         guardians_mobile_number = '09999999999'
        )
 )
+
 # commit
 db.session.commit()
