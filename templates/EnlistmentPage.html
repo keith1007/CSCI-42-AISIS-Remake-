@@ -35,7 +35,7 @@
               			<td> {{ row["Course Title"]}}</td>
             			<td>{{row['Instructor']}}</td> 
             			<td>{{row['Schedule']}}</td>
-                        <td><button class = "enlist-button"><a href = "{{ url_for('enlistNew') }}">Enlist</button></td>
+                        <td><button class = "enlist-button"><a href = {{ url_for('enlist_in_section') }}>Enlist</button></td>
                         <td><button class ="delist-button">Delist</button></td>
                     </tr>
                     {% endfor %}

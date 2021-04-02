@@ -7,7 +7,7 @@ from flask import (
     session
 )
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy_utils import EmailType, PhoneNumberType, PasswordType
+import sqlite3 as sql
 from flask_admin import Admin
 from flask_admin.contrib.sqla import ModelView
 
@@ -73,11 +73,29 @@ def logout():
         return redirect(prev_route)
 
 @app.route('/student_portal/enlistment')
-def enrolled_classes():
-    return render_template('EnlistmentPage.html')
+def enlistment():
+    con = sql.connect("testdb.db")
+    con.row_factory = sql.Row
+
+    cur = con.cursor()
+    cur.execute("select * from StudentInfo")
+   
+    studentIn = cur.fetchall(); 
+    return render_template('EnlistmentPage.html', rows = studentIn)
+
+@app.route('/student_portal/enlist_in_section')
+def enlist_in_section():
+    con = sql.connect("testdb.db")
+    con.row_factory = sql.Row
+
+    cur = con.cursor()
+    cur.execute("select * from CSCI199")
+
+    rows = cur.fetchall();
+    return render_template('EnlistmentSectionsPage.html', rows = rows)
 
 @app.route('/student_portal/enrolled_classes')
-def enlistment():
+def enrolled_classes():
     return render_template('MyCurrentlyEnrolledClassesPage.html')
 
 @app.route('/student_portal/update_student_info', methods=['POST', 'GET'])
