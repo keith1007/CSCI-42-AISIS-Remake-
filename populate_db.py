@@ -1,6 +1,5 @@
-
 from datetime import date
-from application import (
+from app import (
     db,
     Announcement,
     FaqCategory,
