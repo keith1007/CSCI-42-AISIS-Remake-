@@ -1,3 +1,4 @@
+
 from datetime import date
 from application import (
     db,
@@ -15,51 +16,51 @@ db.create_all()
 
 # FOR ANNOUNCEMENTS
 db.session.add(
-	Announcement(
-		title='Deadline for Submission by Undergraduate Students of Applications for Double Degree, effective SY 2021-2022',
-		date=date(2021, 2, 22),
-		body='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-	)
+    Announcement(
+        title='Deadline for Submission by Undergraduate Students of Applications for Double Degree, effective SY 2021-2022',
+        date=date(2021, 2, 22),
+        body='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+    )
 )
 
 db.session.add(
-	Announcement(
-		title='Official Enrollment and Completion of Registration Process for Second Semester, School Year 2020-2021',
-		date=date(2021, 2, 7),
-		body='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-	)
+    Announcement(
+        title='Official Enrollment and Completion of Registration Process for Second Semester, School Year 2020-2021',
+        date=date(2021, 2, 7),
+        body='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+    )
 )
 
 db.session.add(
-	Announcement(
-		title='Adjustments to Academic Processes',
-		date=date(2021, 1, 16),
-		body='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-	)
+    Announcement(
+        title='Adjustments to Academic Processes',
+        date=date(2021, 1, 16),
+        body='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+    )
 )
 
 db.session.add(
-	Announcement(
-		title='Adjusted Academic Calendar for the Second Semester, School Year 2020-2021',
-		date=date(2020, 12, 2),
-		body='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-	)
+    Announcement(
+        title='Adjusted Academic Calendar for the Second Semester, School Year 2020-2021',
+        date=date(2020, 12, 2),
+        body='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+    )
 )
 
 db.session.add(
-	Announcement(
-		title='Adjusted Academic Calendar for the remainder of the First Semester, School Year 2020-2021',
-		date=date(2021, 11, 24),
-		body='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-	)
+    Announcement(
+        title='Adjusted Academic Calendar for the remainder of the First Semester, School Year 2020-2021',
+        date=date(2021, 11, 24),
+        body='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+    )
 )
 
 db.session.add(
-	Announcement(
-		title='Requests for Reinstatement and/or Extension for Second Semester of School Year 2020-2021',
-		date=date(2021, 10, 29),
-		body='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-	)
+    Announcement(
+        title='Requests for Reinstatement and/or Extension for Second Semester of School Year 2020-2021',
+        date=date(2021, 10, 29),
+        body='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+    )
 )
 
 # FOR FAQ RELATED DATA
@@ -199,6 +200,10 @@ db.session.add(
 db.session.add(
     Student(
         id = 420699,
+        name = 'Rick Astley',
+        year = 2,
+        is_regular = True,
+        degree = 'BS Management',
         password = '1234password',
         primary_mobile = '09999999999',
         secondary_email = 'dude@obf.ateneo.edu',
@@ -222,8 +227,12 @@ db.session.add(
 
 db.session.add(
     Student(
-        id = 420696,
-        password = 'password1234',
+        id = 000000,
+        name = 'Shrekit Ralph',
+        year = 4,
+        is_regular = False,
+        degree = 'BFA Information Design',
+        password = 'foo',
         primary_mobile = '09999999991',
         secondary_email = 'dood@obf.ateneo.edu',
         guardians_unit_no = 1234,
@@ -243,6 +252,5 @@ db.session.add(
         guardians_mobile_number = '09999999999'
        )
 )
-
 # commit
 db.session.commit()
