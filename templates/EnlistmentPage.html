@@ -28,16 +28,18 @@
                 </tr>
                 <div class = "tablecontentsdiv">
                     <!--Henlo Back End peeps, if you want a new row, add one of these lang-->
+                    {% for row in rows %}
                     <tr>
-                        <td>CSCI 142i</td>
-                        <td>A</td>
-                        <td>Human Computer Interaction</td>
-                        <td>J. Agapito</td>
-                        <td>MWF 1200-1300</td>
-                        <td><button class = "enlist-button">Enlist</button></td>
+						<td>{{row["Subject Code"]}}</td>
+               			<td>{{row["Section"]}}</td>
+              			<td> {{ row["Course Title"]}}</td>
+            			<td>{{row['Instructor']}}</td> 
+            			<td>{{row['Schedule']}}</td>
+                        <td><button class = "enlist-button"><a href = "{{ url_for('enlistNew') }}">Enlist</button></td>
                         <td><button class ="delist-button">Delist</button></td>
                     </tr>
-                    <!--row end-->
+                    {% endfor %}
+                    <!--row end--> <!--
                     <tr>
                         <td>CSCI 142i</td>
                         <td>A</td>
@@ -65,117 +67,7 @@
                         <td><button class = "enlist-button">Enlist</button></td>
                         <td><button class ="delist-button">Delist</button></td>
                     </tr>
-                    
-
-                    <tr>
-                        <td>Ryan</td>
-                        <td>Andy</td>
-                        <td>Put your stuff here XDDD</td>
-                        <td></td>
-                        <td></td>
-                        <td><button class = "enlist-button">Enlist</button></td>
-                        <td><button class ="delist-button">Delist</button></td>
-                    </tr>
-                    <tr>
-                        <td>Ryan</td>
-                        <td>Andy</td>
-                        <td>Put your stuff here XDDD</td>
-                        <td></td>
-                        <td></td>
-                        <td><button class = "enlist-button">Enlist</button></td>
-                        <td><button class ="delist-button">Delist</button></td>
-                    </tr>
-                    <tr>
-                        <td>Ryan</td>
-                        <td>Andy</td>
-                        <td>Put your stuff here XDDD</td>
-                        <td></td>
-                        <td></td>
-                        <td><button class = "enlist-button">Enlist</button></td>
-                        <td><button class ="delist-button">Delist</button></td>
-                    </tr>
-                    <tr>
-                        <td>Ryan</td>
-                        <td>Andy</td>
-                        <td>Put your stuff here XDDD</td>
-                        <td></td>
-                        <td></td>
-                        <td><button class = "enlist-button">Enlist</button></td>
-                        <td><button class ="delist-button">Delist</button></td>
-                    </tr>
-                    <tr>
-                        <td>Ryan</td>
-                        <td>Andy</td>
-                        <td>Put your stuff here XDDD</td>
-                        <td></td>
-                        <td></td>
-                        <td><button class = "enlist-button">Enlist</button></td>
-                        <td><button class ="delist-button">Delist</button></td>
-                    </tr>
-                    <tr>
-                        <td>Ryan</td>
-                        <td>Andy</td>
-                        <td>Put your stuff here XDDD</td>
-                        <td></td>
-                        <td></td>
-                        <td><button class = "enlist-button">Enlist</button></td>
-                        <td><button class ="delist-button">Delist</button></td>
-                    </tr>
-                    <!--10th is above-->
-                    <tr>
-                        <td>Ryan</td>
-                        <td>Andy</td>
-                        <td>Put your stuff here XDDD</td>
-                        <td></td>
-                        <td></td>
-                        <td><button class = "enlist-button">Enlist</button></td>
-                        <td><button class ="delist-button">Delist</button></td>
-                    </tr>
-                    <tr>
-                        <td>Ryan</td>
-                        <td>Andy</td>
-                        <td>Put your stuff here XDDD</td>
-                        <td></td>
-                        <td></td>
-                        <td><button class = "enlist-button">Enlist</button></td>
-                        <td><button class ="delist-button">Delist</button></td>
-                    </tr>
-                    <tr>
-                        <td>Ryan</td>
-                        <td>Andy</td>
-                        <td>Put your stuff here XDDD</td>
-                        <td></td>
-                        <td></td>
-                        <td><button class = "enlist-button">Enlist</button></td>
-                        <td><button class ="delist-button">Delist</button></td>
-                    </tr>
-                    <tr>
-                        <td>Ryan</td>
-                        <td>Andy</td>
-                        <td>Put your stuff here XDDD</td>
-                        <td></td>
-                        <td></td>
-                        <td><button class = "enlist-button">Enlist</button></td>
-                        <td><button class ="delist-button">Delist</button></td>
-                    </tr>
-                    <tr>
-                        <td>Last</td>
-                        <td>One</td>
-                        <td>Put your stuff here XDDD</td>
-                        <td></td>
-                        <td></td>
-                        <td><button class = "enlist-button">Enlist</button></td>
-                        <td><button class ="delist-button">Delist</button></td>
-                    </tr>
-                    <tr>
-                        <td>Last</td>
-                        <td>One</td>
-                        <td>Put your stuff here XDDD</td>
-                        <td></td>
-                        <td></td>
-                        <td><button class = "enlist-button">Enlist</button></td>
-                        <td><button class ="delist-button">Delist</button></td>
-                    </tr>
+                    -->
                 </div>
             </table>
         </div>
@@ -196,6 +88,4 @@
         </a>     
 
     </div>
-</body>
-</html>
 {% endblock %}
