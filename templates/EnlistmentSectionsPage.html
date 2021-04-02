@@ -69,42 +69,53 @@
                     <th>SUBJECT CODE</th>
                     <th>SECTION</th>
                     <th>COURSE TITLE</th>
-                    <th>INSTRUCTOR</th>
+                    <th>UNITS</th>
                     <th>SCHEDULE</th>
+                    <th>ROOM</th>
+                    <th>INSTRUCTOR</th>
+                    <th>MAX NO</th>
+                    <th>LANG</th>
+                    <th>LEVEL</th>
+                    <th>FREE SLOTS</th>
+                    <th>REMARKS</th>
                     <th>ENLIST</th>
-                    <th>DELIST</th>
                 </tr>
                 <div class = "tablecontentsdiv">
                     <!--Henlo Back End peeps, if you want a new row, add one of these lang-->
                     {% for row in rows %}
                     <tr>
-						<td>{{row["Subject Code"]}}</td>
-               			<td>{{row["Section"]}}</td>
-              			<td> {{ row["Course Title"]}}</td>
-            			<td>{{row['Instructor']}}</td> 
-            			<td>{{row['Schedule']}}</td>
-                        <td><button class = "enlist-button"><a href = "{{ url_for('enlistNew') }}">Enlist</button></td>
-                        <td><button class ="delist-button">Delist</button></td>
+                        <td>{{row["Course Code"]}}</td>
+                        <td>{{row["Section"]}}</td>
+                        <td> {{ row["Course Title"]}}</td>
+                        <td> {{ row["Units"]}}</td>
+                        <td>{{row['Time']}}</td>
+                        <td> {{ row["Room"]}}</td>
+                        <td>{{row['Instructor']}}</td> 
+                        <td> {{ row["Max No"]}}</td>
+                        <td> {{ row["Lang"]}}</td>
+                        <td> {{ row["Level"]}}</td>
+                        <td> {{ row["Free Slots"]}}</td>
+                        <td> {{ row["Remarks"]}}</td>
+                        <td><button class = "enlist-button"><a href = "{{ url_for('enlist') }}">Enlist</button></td>
                     </tr>
                     {% endfor %}
-                    <!--row end--> <!--
+                    <!--row end-->
+                    <!--
                     <tr>
                         <td>CSCI 142i</td>
                         <td>A</td>
                         <td>Human Computer Interaction</td>
                         <td>M. Rodrigo</td>
-                        <td>MWF 1300-1400</td>
+                        <td>-</td>
                         <td><button class = "enlist-button">Enlist</button></td>
-                        <td><button class ="delist-button">Delist</button></td>
                     </tr>
                     <tr>
                         <td>ENE 13.05</td>
                         <td>E</td>
                         <td>Story and Narratives in Science and Engineering</td>
                         <td>S. Jobs</td>
-                        <td>TTH 0930-1100</td>
+                        <td>-</td>
                         <td><button class = "enlist-button">Enlist</button></td>
-                        <td><button class ="delist-button">Delist</button></td>
                     </tr>
                     <tr>
                         <td>Ryan</td>
@@ -113,7 +124,6 @@
                         <td></td>
                         <td></td>
                         <td><button class = "enlist-button">Enlist</button></td>
-                        <td><button class ="delist-button">Delist</button></td>
                     </tr>
                     -->
                 </div>
