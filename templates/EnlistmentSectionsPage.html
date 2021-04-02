@@ -1,0 +1,101 @@
+{% extends 'MainHeaderTemplate.html' %}
+
+{% block specific_css %}
+<link rel="stylesheet" href="../static/css/Enlistmentstyles.css">
+{% endblock %}
+
+{% block body %}
+    <!--Will add the Enlistment Table Below-->
+
+    <div class="EnlistmentContainer">
+        <!--The Grey Header-->
+        <div class = "top-enlistment-header">
+            <h1 class="portaltextheader">Enlist in Your Classes!</h1>
+            <p class="content">Press "Enlist" to add a class to your Enlisted Classes or press "Delist" to remove it.</p>
+        </div>
+
+        <div class = "enlistablediv">
+        <!--The Actual Enlistment Table-->
+            <table>
+                <tr>
+                    <th>SUBJECT CODE</th>
+                    <th>SECTION</th>
+                    <th>COURSE TITLE</th>
+                    <th>UNITS</th>
+                    <th>SCHEDULE</th>
+                    <th>ROOM</th>
+                    <th>INSTRUCTOR</th>
+                    <th>MAX NO</th>
+                    <th>LANG</th>
+                    <th>LEVEL</th>
+                    <th>FREE SLOTS</th>
+                    <th>REMARKS</th>
+                    <th>ENLIST</th>
+                </tr>
+                <div class = "tablecontentsdiv">
+                    <!--Henlo Back End peeps, if you want a new row, add one of these lang-->
+                    {% for row in rows %}
+                    <tr>
+                        <td>{{row["Course Code"]}}</td>
+                        <td>{{row["Section"]}}</td>
+                        <td> {{ row["Course Title"]}}</td>
+                        <td> {{ row["Units"]}}</td>
+                        <td>{{row['Time']}}</td>
+                        <td> {{ row["Room"]}}</td>
+                        <td>{{row['Instructor']}}</td> 
+                        <td> {{ row["Max No"]}}</td>
+                        <td> {{ row["Lang"]}}</td>
+                        <td> {{ row["Level"]}}</td>
+                        <td> {{ row["Free Slots"]}}</td>
+                        <td> {{ row["Remarks"]}}</td>
+                        <td><button class = "enlist-button"><a href = "{{ url_for('enlist') }}">Enlist</button></td>
+                    </tr>
+                    {% endfor %}
+                    <!--row end-->
+                    <!--
+                    <tr>
+                        <td>CSCI 142i</td>
+                        <td>A</td>
+                        <td>Human Computer Interaction</td>
+                        <td>M. Rodrigo</td>
+                        <td>-</td>
+                        <td><button class = "enlist-button">Enlist</button></td>
+                    </tr>
+                    <tr>
+                        <td>ENE 13.05</td>
+                        <td>E</td>
+                        <td>Story and Narratives in Science and Engineering</td>
+                        <td>S. Jobs</td>
+                        <td>-</td>
+                        <td><button class = "enlist-button">Enlist</button></td>
+                    </tr>
+                    <tr>
+                        <td>Ryan</td>
+                        <td>Andy</td>
+                        <td>Put your stuff here XDDD</td>
+                        <td></td>
+                        <td></td>
+                        <td><button class = "enlist-button">Enlist</button></td>
+                    </tr>
+                    -->
+                </div>
+            </table>
+        </div>
+
+        <!--Return Home to Student Home Page Button-->
+        <a href="#" class = "back2portalbutton" >Back to Portal</a>
+
+        <!--The Grey Copyright-->
+        <p class = "bottom-copyright" id = "bottom"> (c) Copyright 2006 Ateneo Integrated Student Information System. Ateneo de Manila University. All Rights Reserved.</p>
+        
+        <!--Navigation Triangles-->
+        <a href="#top"> 
+            <div class="triangle-up"></div>
+        </a>     
+
+        <a href="#bottom"> 
+            <div class="triangle-down"></div>
+        </a>     
+
+    </div>
+{% endblock %}
