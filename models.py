@@ -150,15 +150,11 @@ class Student(db.Model):
     def __repr__(self):
         return f'{self.id}'
 
-class CSCI199(db.Model):
-    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+class Course(db.Model):
+    code = db.Column(db.String(10), primary_key=True)
     title = db.Column(db.String(200), nullable=False)
-    date = db.Column(db.DateTime, nullable=False)
-    prompt = db.Column(db.String(100), nullable=False)
-    content = db.Column(db.Text, nullable=False)
+    units = db.Column(db.Integer)
+    level = db.Column(db.String(1))
 
     def __repr__(self):
-        return f"""enlistment_update {self.id}
-        faq {self.title}
-        {self.prompt}"""
-
+        return f'{self.code}: {self.title}'
