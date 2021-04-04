@@ -158,3 +158,20 @@ class Course(db.Model):
 
     def __repr__(self):
         return f'{self.code}: {self.title}'
+
+
+class Section(db.Model):
+    course_code = db.Column(db.String(10), db.ForeignKey('course.code'), primary_key=True)
+    section_id = db.Column(db.String(10), primary_key=True)
+    time = db.Column(db.String(20), nullable=False)
+    room = db.Column(db.String(20), nullable=False)
+    instructor = db.Column(db.String(100), nullable=False)
+    max_slots = db.Column(db.Integer, nullable=False)
+    language = db.Column(db.String(3), nullable=False)
+    free_slots = db.Column(db.Integer, nullable=False)
+    remarks = db.Column(db.String(100), nullable=False)
+
+    course = db.relationship('Course', backref=db.backref('sections', lazy=True))
+
+    def __repr__(self):
+        return f'{self.code_code} {self.section_id}'
