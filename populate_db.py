@@ -6,7 +6,8 @@ from models import (
     FAQ,
     EnlistmentUpdate,
     Student,
-    Course
+    Course,
+    Section
 )
 from flask_sqlalchemy import SQLAlchemy
 
@@ -290,6 +291,79 @@ db.session.add(
         level = 'U'
     )
 )
+
+# FOR SECTIONS
+for section_id in 'ABCDE':
+    db.session.add(
+        Section(
+            course_code = 'CSCI 199.1',
+            section_id = section_id,
+            time = 'MWF 2:00-3:00',
+            room = 'TBA',
+            instructor = 'TBA',
+            max_slots = 15,
+            language = 'ENG',
+            free_slots = 15,
+            remarks = '-'
+        )
+    )
+
+for section_id, time in (
+    ('A', '9:00-10:30'),
+    ('B', '10:30-12:00'),
+    ('C', '12:00-1:30')
+):
+    db.session.add(
+        Section(
+            course_code = 'CSCI 40',
+            section_id = section_id,
+            time = f'TTH {time}',
+            room = 'TBA',
+            instructor = 'TBA',
+            max_slots = 15,
+            language = 'ENG',
+            free_slots = 15,
+            remarks = '-'
+        )
+    )
+
+for section_id, time in (
+    ('A', '8:00-9:00'),
+    ('B', '9:00-10:00'),
+    ('C', '10:00-11:00')
+):
+    db.session.add(
+        Section(
+            course_code = 'CSCI 42',
+            section_id = section_id,
+            time = f'MWF {time}',
+            room = 'TBA',
+            instructor = 'TBA',
+            max_slots = 15,
+            language = 'ENG',
+            free_slots = 15,
+            remarks = '-'
+        )
+    )
+
+for section_id, time in (
+    ('A', '2:00-3:00'),
+    ('B', '3:00-4:00'),
+    ('C', '4:00-5:00')
+):
+    db.session.add(
+        Section(
+            course_code = 'PHILO',
+            section_id = section_id,
+            time = f'MWF {time}',
+            room = 'TBA',
+            instructor = 'TBA',
+            max_slots = 15,
+            language = 'ENG',
+            free_slots = 15,
+            remarks = '-'
+        )
+    )
 
 # commit
 db.session.commit()
