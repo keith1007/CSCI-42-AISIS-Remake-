@@ -1,11 +1,12 @@
 from datetime import date
-from app import (
-    db,
+from app import db
+from models import (
     Announcement,
     FaqCategory,
     FAQ,
     EnlistmentUpdate,
-    Student
+    Student,
+    Course
 )
 from flask_sqlalchemy import SQLAlchemy
 
@@ -251,5 +252,44 @@ db.session.add(
         guardians_mobile_number = '09999999999'
        )
 )
+
+
+# FOR COURSES
+db.session.add(
+    Course(
+        code = 'CSCI 199.1',
+        title = 'THESIS WRITING I',
+        units = 1,
+        level = 'U'
+    )
+)
+
+db.session.add(
+    Course(
+        code = 'CSCI 40',
+        title = 'SOFTWARE TOOLS AND DEVELOPMENT FRAMEWORKS',
+        units = 1,
+        level = 'U'
+    )
+)
+
+db.session.add(
+    Course(
+        code = 'CSCI 42',
+        title = 'INTRODUCTION TO SOFTWARE ENGINEERING',
+        units = 1,
+        level = 'U'
+    )
+)
+
+db.session.add(
+    Course(
+        code = 'PHILO 13',
+        title = 'ETHICS',
+        units = 1,
+        level = 'U'
+    )
+)
+
 # commit
 db.session.commit()
