@@ -209,7 +209,7 @@ db.session.add(
         primary_mobile = '09999999999',
         secondary_email = 'dude@obf.ateneo.edu',
         courses_to_enlist_in = ['CSCI 199.1', 'CSCI 40'],
-        courses_enlisted_in = [('CSCI 199.1', 'A')],
+        courses_enlisted_in = {'CSCI 199.1': 'A'},
         guardians_unit_no = 1234,
         guardians_building = 'Somebuilding',
         guardians_street_no= 56,
@@ -239,7 +239,7 @@ db.session.add(
         primary_mobile = '09999999991',
         secondary_email = 'dood@obf.ateneo.edu',
         courses_to_enlist_in = ['CSCI 42', 'PHILO 13'],
-        courses_enlisted_in = [('PHILO 13', 'B')],
+        courses_enlisted_in = {'PHILO 13':'B'},
         guardians_unit_no = 1234,
         guardians_building = 'Somebuilding',
         guardians_street_no= 56,
@@ -357,7 +357,7 @@ for section_id, time in (
 ):
     db.session.add(
         Section(
-            course_code = 'PHILO',
+            course_code = 'PHILO 13',
             section_id = section_id,
             time = f'MWF {time}',
             room = 'TBA',

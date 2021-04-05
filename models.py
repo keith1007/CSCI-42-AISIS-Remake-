@@ -175,4 +175,4 @@ class Section(db.Model):
     course = db.relationship('Course', backref=db.backref('sections', lazy=True))
 
     def __repr__(self):
-        return f'{self.code_code} {self.section_id}'
+        return f'{self.course_code} {self.section_id}'

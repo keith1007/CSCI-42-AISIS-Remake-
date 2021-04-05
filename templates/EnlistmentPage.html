@@ -28,13 +28,13 @@
                 </tr>
                 <div class = "tablecontentsdiv">
                     <!--Henlo Back End peeps, if you want a new row, add one of these lang-->
-                    {% for row in rows %}
+                    {% for data in enlistment_data %}
                     <tr>
-						<td>{{row["Subject Code"]}}</td>
-               			<td>{{row["Section"]}}</td>
-              			<td> {{ row["Course Title"]}}</td>
-            			<td>{{row['Instructor']}}</td> 
-            			<td>{{row['Schedule']}}</td>
+						<td>{{ data['course_code'] }}</td>
+               			<td>{{ data['section_id'] }}</td>
+              			<td>{{ data['course_title'] }}</td>
+            			<td>{{ data['instructor'] }}</td>
+            			<td>{{ data['time'] }}</td>
                         <td><button class = "enlist-button"><a href = {{ url_for('enlist_in_section') }}>Enlist</button></td>
                         <td><button class ="delist-button">Delist</button></td>
                     </tr>

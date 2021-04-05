@@ -24,7 +24,9 @@ from models import (
     FAQ,
     FaqCategory,
     EnlistmentUpdate,
-    Student
+    Student,
+    Course,
+    Section
 )
 
 @app.route('/')
@@ -74,14 +76,21 @@ def logout():
 
 @app.route('/student_portal/enlistment')
 def enlistment():
-    con = sql.connect("testdb.db")
-    con.row_factory = sql.Row
+    courses_to_enlist_in = Student.query.filter_by(id=session['username']).first().courses_to_enlist_in
+    courses_enlisted_in = Student.query.filter_by(id=session['username']).first().courses_enlisted_in
 
-    cur = con.cursor()
-    cur.execute("select * from StudentInfo")
-   
-    studentIn = cur.fetchall(); 
-    return render_template('EnlistmentPage.html', rows = studentIn)
+    enlistment_data = [
+        {
+            'course_code': course_code,
+            'section_id': courses_enlisted_in.get(course_code, '-'),
+            'course_title': Course.query.get(course_code).title,
+            'instructor': '-' if course_code not in courses_enlisted_in else Section.query.get((course_code, courses_enlisted_in[course_code])).instructor,
+            'time': '-' if course_code not in courses_enlisted_in else Section.query.get((course_code, courses_enlisted_in[course_code])).time
+        }
+        for course_code in courses_to_enlist_in
+    ]
+
+    return render_template('EnlistmentPage.html', enlistment_data=enlistment_data)
 
 @app.route('/student_portal/enlist_in_section')
 def enlist_in_section():
