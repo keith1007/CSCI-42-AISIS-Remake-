@@ -93,20 +93,13 @@ def enlistment():
 
             db.session.commit()
 
-        # print(f"{Student.query.get(session['username']).courses_enlisted_in}")
-        # print(request.form['course_code'])
-        # print(request.form['section_id'])
         courses_enlisted_in = Student.query.get(session['username']).courses_enlisted_in
         courses_enlisted_in[request.form['course_code']] = request.form['section_id']
         Student.query.get(session['username']).courses_enlisted_in = courses_enlisted_in
-        # Student.query.get(session['username']).courses_enlisted_in[request.form['course_code']] = request.form['section_id']
-        # print(f"{Student.query.get(session['username']).courses_enlisted_in}")
         free_slots = Section.query.get((request.form['course_code'], request.form['section_id'])).free_slots
         Section.query.get((request.form['course_code'], request.form['section_id'])).free_slots = free_slots - 1
 
         db.session.commit()
-
-        # return f"{Student.query.get(session['username']).courses_enlisted_in}"
 
     courses_to_enlist_in = Student.query.filter_by(id=session['username']).first().courses_to_enlist_in
     courses_enlisted_in = Student.query.filter_by(id=session['username']).first().courses_enlisted_in
