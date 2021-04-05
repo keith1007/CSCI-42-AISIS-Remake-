@@ -157,9 +157,12 @@ def update_student_info():
 def change_password():
     if request.method == 'POST':
         if request.form['old_password'] == Student.query.filter_by(id=session['username']).first().password and \
-        request.form['new_password'] == request.form['new_password_repeated']:
-            Student.query.filter_by(id=session['username']).first().password = request.form['new_password']
+        request.form['new_password'] == request.form['new_password_repeated'] and \
+        len(request.form['new_password']) >= 8:
+            Student.query.get(session['username']).password = request.form['new_password']
             db.session.commit()
+        else:
+            session['password_change_failed'] = True
     return render_template('ChangePassword.html')
 
 admin = Admin(app, name='microblog', template_mode='bootstrap3')
