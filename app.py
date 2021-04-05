@@ -76,15 +76,37 @@ def logout():
 
 @app.route('/student_portal/enlistment', methods=['POST', 'GET'])
 def enlistment():
-    if request.method == 'POST' and request.form['section_id'] != '-':
+    if request.method == 'POST' and request.referrer.endswith(url_for('enlistment')) and request.form['section_id'] != '-':
         courses_enlisted_in = Student.query.get(session['username']).courses_enlisted_in
         del courses_enlisted_in[request.form['course_code']]
         Student.query.get(session['username']).courses_enlisted_in = courses_enlisted_in
 
         free_slots = Section.query.get((request.form['course_code'], request.form['section_id'])).free_slots
+        Section.query.get((request.form['course_code'], request.form['section_id'])).free_slots = free_slots + 1
+
+        db.session.commit()
+
+    elif request.method == 'POST' and request.referrer.endswith(url_for('enlist_in_section')):
+        if request.form['course_code'] in Student.query.get(session['username']).courses_enlisted_in:
+            free_slots = Section.query.get((request.form['course_code'], request.form['section_id'])).free_slots
+            Section.query.get((request.form['course_code'], request.form['section_id'])).free_slots = free_slots + 1
+
+            db.session.commit()
+
+        # print(f"{Student.query.get(session['username']).courses_enlisted_in}")
+        # print(request.form['course_code'])
+        # print(request.form['section_id'])
+        courses_enlisted_in = Student.query.get(session['username']).courses_enlisted_in
+        courses_enlisted_in[request.form['course_code']] = request.form['section_id']
+        Student.query.get(session['username']).courses_enlisted_in = courses_enlisted_in
+        # Student.query.get(session['username']).courses_enlisted_in[request.form['course_code']] = request.form['section_id']
+        # print(f"{Student.query.get(session['username']).courses_enlisted_in}")
+        free_slots = Section.query.get((request.form['course_code'], request.form['section_id'])).free_slots
         Section.query.get((request.form['course_code'], request.form['section_id'])).free_slots = free_slots - 1
 
         db.session.commit()
+
+        # return f"{Student.query.get(session['username']).courses_enlisted_in}"
 
     courses_to_enlist_in = Student.query.filter_by(id=session['username']).first().courses_to_enlist_in
     courses_enlisted_in = Student.query.filter_by(id=session['username']).first().courses_enlisted_in
@@ -102,18 +124,29 @@ def enlistment():
 
     return render_template('EnlistmentPage.html', enlistment_data=enlistment_data)
 
-@app.route('/student_portal/enlist_in_section', methods=['POST', 'GET'])
+@app.route('/student_portal/enlist_in_section', methods=['POST'])
 def enlist_in_section():
-    if request.method == 'POST':
-        return request.form
-    con = sql.connect("testdb.db")
-    con.row_factory = sql.Row
 
-    cur = con.cursor()
-    cur.execute("select * from CSCI199")
+    section_data = [
+        {
+            'course_code': section.course_code,
+            'section_id': section.section_id,
+            'course_title': Course.query.get(section.course_code).title,
+            'units': Course.query.get(section.course_code).units,
+            'time': section.time,
+            'room': section.room,
+            'instructor': section.instructor,
+            'max_no': section.max_slots,
+            'language': section.language,
+            'level': Course.query.get(section.course_code).level,
+            'free_slots': section.free_slots,
+            'remarks': section.remarks,
+            
+        }
+        for section in Course.query.get(request.form['course_code']).sections
+    ]
 
-    rows = cur.fetchall();
-    return render_template('EnlistmentSectionsPage.html', rows=rows)
+    return render_template('EnlistmentSectionsPage.html', section_data=section_data)
 
 @app.route('/student_portal/enrolled_classes')
 def enrolled_classes():

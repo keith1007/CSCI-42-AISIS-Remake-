@@ -11,7 +11,7 @@
         <!--The Grey Header-->
         <div class = "top-enlistment-header">
             <h1 class="portaltextheader">Enlist in Your Classes!</h1>
-            <p class="content">Press "Enlist" to add a class to your Enlisted Classes or press "Delist" to remove it.</p>
+            <p class="content">Press "Enlist" to enlist in a section.</p>
         </div>
 
         <div class = "enlistablediv">
@@ -34,22 +34,26 @@
                 </tr>
                 <div class = "tablecontentsdiv">
                     <!--Henlo Back End peeps, if you want a new row, add one of these lang-->
-                    {% for row in rows %}
-                    <tr>
-                        <td>{{row["Course Code"]}}</td>
-                        <td>{{row["Section"]}}</td>
-                        <td> {{ row["Course Title"]}}</td>
-                        <td> {{ row["Units"]}}</td>
-                        <td>{{row['Time']}}</td>
-                        <td> {{ row["Room"]}}</td>
-                        <td>{{row['Instructor']}}</td> 
-                        <td> {{ row["Max No"]}}</td>
-                        <td> {{ row["Lang"]}}</td>
-                        <td> {{ row["Level"]}}</td>
-                        <td> {{ row["Free Slots"]}}</td>
-                        <td> {{ row["Remarks"]}}</td>
-                        <td><button class = "enlist-button"><a href = {{ url_for('enlistment') }}>Enlist</button></td>
-                    </tr>
+                    {% for data in section_data %}
+                    <form method="post">
+                        <tr>
+                            <td>{{ data['course_code'] }}</td>
+                            <td>{{ data['section_id'] }}</td>
+                            <td>{{ data['course_title'] }}</td>
+                            <td>{{ data['units'] }}</td>
+                            <td>{{ data['time'] }}</td>
+                            <td>{{ data['room'] }}</td>
+                            <td>{{ data['instructor'] }}</td>
+                            <td>{{ data['max_no'] }}</td>
+                            <td>{{ data['language'] }}</td>
+                            <td>{{ data['level'] }}</td>
+                            <td>{{ data['free_slots'] }}</td>
+                            <td>{{ data['remarks'] }}</td>
+                            <input type="hidden" name=course_code value="{{ data['course_code'] }}" />
+                            <input type="hidden" name=section_id value="{{ data['section_id'] }}" />
+                            <td><button class = "enlist-button" type=submit formaction="{{ url_for('enlistment') }}">Enlist</button></td>
+                        </tr>
+                    </form>
                     {% endfor %}
                     <!--row end-->
                     <!--
@@ -83,7 +87,7 @@
         </div>
 
         <!--Return Home to Student Home Page Button-->
-        <a href="/student_portal" class = "back2portalbutton" >Back to Portal</a>
+        <a href="{{ url_for('enlistment') }}" class = "back2portalbutton" >Back to Enlistment Page</a>
 
         <!--The Grey Copyright-->
         <p class = "bottom-copyright" id = "bottom"> (c) Copyright 2006 Ateneo Integrated Student Information System. Ateneo de Manila University. All Rights Reserved.</p>
