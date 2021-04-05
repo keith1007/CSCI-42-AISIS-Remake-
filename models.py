@@ -1,5 +1,5 @@
 from app import db
-from sqlalchemy_utils import EmailType, PhoneNumberType, PasswordType
+from sqlalchemy_utils import EmailType, PhoneNumberType, PasswordType, JSONType
 
 
 class Announcement(db.Model):
@@ -57,6 +57,9 @@ class Student(db.Model):
     password = db.Column(db.Text, nullable=False)
     primary_mobile = db.Column(PhoneNumberType, nullable=False)
     secondary_email = db.Column(EmailType, nullable=False)
+
+    courses_to_enlist_in = db.Column(JSONType)
+    courses_enlisted_in = db.Column(JSONType)
 
     guardians_unit_no = db.Column(db.Integer)
     guardians_building = db.Column(db.String(100))
