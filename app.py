@@ -74,8 +74,10 @@ def logout():
     else:
         return redirect(prev_route)
 
-@app.route('/student_portal/enlistment')
+@app.route('/student_portal/enlistment', methods=['POST', 'GET'])
 def enlistment():
+    if request.method == 'POST':
+        return request.form
     courses_to_enlist_in = Student.query.filter_by(id=session['username']).first().courses_to_enlist_in
     courses_enlisted_in = Student.query.filter_by(id=session['username']).first().courses_enlisted_in
 
@@ -92,8 +94,10 @@ def enlistment():
 
     return render_template('EnlistmentPage.html', enlistment_data=enlistment_data)
 
-@app.route('/student_portal/enlist_in_section')
+@app.route('/student_portal/enlist_in_section', methods=['POST', 'GET'])
 def enlist_in_section():
+    if request.method == 'POST':
+        return request.form
     con = sql.connect("testdb.db")
     con.row_factory = sql.Row
 
@@ -101,7 +105,7 @@ def enlist_in_section():
     cur.execute("select * from CSCI199")
 
     rows = cur.fetchall();
-    return render_template('EnlistmentSectionsPage.html', rows = rows)
+    return render_template('EnlistmentSectionsPage.html', rows=rows)
 
 @app.route('/student_portal/enrolled_classes')
 def enrolled_classes():

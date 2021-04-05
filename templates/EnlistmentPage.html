@@ -28,17 +28,20 @@
                 </tr>
                 <div class = "tablecontentsdiv">
                     <!--Henlo Back End peeps, if you want a new row, add one of these lang-->
-                    {% for data in enlistment_data %}
-                    <tr>
-						<td>{{ data['course_code'] }}</td>
-               			<td>{{ data['section_id'] }}</td>
-              			<td>{{ data['course_title'] }}</td>
-            			<td>{{ data['instructor'] }}</td>
-            			<td>{{ data['time'] }}</td>
-                        <td><button class = "enlist-button"><a href = {{ url_for('enlist_in_section') }}>Enlist</button></td>
-                        <td><button class ="delist-button">Delist</button></td>
-                    </tr>
-                    {% endfor %}
+                    <form method=post>
+	                    {% for data in enlistment_data %}
+	                    <tr>
+	                    	<input type="hidden" name=course_code value={{ data['course_code'] }} />
+							<td>{{ data['course_code'] }}</td>
+	               			<td>{{ data['section_id'] }}</td>
+	              			<td>{{ data['course_title'] }}</td>
+	            			<td>{{ data['instructor'] }}</td>
+	            			<td>{{ data['time'] }}</td>
+	                        <td><button type=submit formaction = {{ url_for('enlist_in_section') }} class = "enlist-button">Enlist</button></td>
+	                        <td><button type=submit class ="delist-button">Delist</button></td>
+	                    </tr>
+	                    {% endfor %}
+                    </form>
                     <!--row end--> <!--
                     <tr>
                         <td>CSCI 142i</td>
