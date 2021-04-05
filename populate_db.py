@@ -235,7 +235,7 @@ db.session.add(
         year = 4,
         is_regular = False,
         degree = 'BFA Information Design',
-        password = 'foo',
+        password = 'foobarfoo',
         primary_mobile = '09999999991',
         secondary_email = 'dood@obf.ateneo.edu',
         courses_to_enlist_in = ['CSCI 42', 'PHILO 13'],
