@@ -76,8 +76,16 @@ def logout():
 
 @app.route('/student_portal/enlistment', methods=['POST', 'GET'])
 def enlistment():
-    if request.method == 'POST':
-        return request.form
+    if request.method == 'POST' and request.form['section_id'] != '-':
+        courses_enlisted_in = Student.query.get(session['username']).courses_enlisted_in
+        del courses_enlisted_in[request.form['course_code']]
+        Student.query.get(session['username']).courses_enlisted_in = courses_enlisted_in
+
+        free_slots = Section.query.get((request.form['course_code'], request.form['section_id'])).free_slots
+        Section.query.get((request.form['course_code'], request.form['section_id'])).free_slots = free_slots - 1
+
+        db.session.commit()
+
     courses_to_enlist_in = Student.query.filter_by(id=session['username']).first().courses_to_enlist_in
     courses_enlisted_in = Student.query.filter_by(id=session['username']).first().courses_enlisted_in
 
@@ -135,3 +143,4 @@ admin.add_view(ModelView(FAQ, db.session))
 admin.add_view(ModelView(FaqCategory, db.session))
 admin.add_view(ModelView(EnlistmentUpdate, db.session))
 admin.add_view(ModelView(Student, db.session))
+admin.add_view(ModelView(Section, db.session))

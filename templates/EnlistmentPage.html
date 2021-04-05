@@ -28,10 +28,11 @@
                 </tr>
                 <div class = "tablecontentsdiv">
                     <!--Henlo Back End peeps, if you want a new row, add one of these lang-->
+                    {% for data in enlistment_data %}
                     <form method=post>
-	                    {% for data in enlistment_data %}
 	                    <tr>
-	                    	<input type="hidden" name=course_code value={{ data['course_code'] }} />
+	                    	<input type="hidden" name=course_code value="{{ data['course_code'] }}" />
+	                    	<input type="hidden" name=section_id value="{{ data['section_id'] }}" />
 							<td>{{ data['course_code'] }}</td>
 	               			<td>{{ data['section_id'] }}</td>
 	              			<td>{{ data['course_title'] }}</td>
@@ -40,8 +41,8 @@
 	                        <td><button type=submit formaction = {{ url_for('enlist_in_section') }} class = "enlist-button">Enlist</button></td>
 	                        <td><button type=submit class ="delist-button">Delist</button></td>
 	                    </tr>
-	                    {% endfor %}
                     </form>
+                    {% endfor %}
                     <!--row end--> <!--
                     <tr>
                         <td>CSCI 142i</td>
