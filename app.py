@@ -149,8 +149,9 @@ def enrolled_classes():
 def update_student_info():
     if request.method == 'POST':
         for k, v in request.form.items():
-            setattr(Student.query.filter_by(id = session['username']).first(), k, v)
-            db.session.commit()
+            if v:
+                setattr(Student.query.filter_by(id = session['username']).first(), k, v)
+                db.session.commit()
     return render_template('UpdateStudentInfo.html', student_info=Student.query.filter_by(id=session['username']).first())
 
 @app.route('/student_portal/change_password', methods=['POST', 'GET'])
