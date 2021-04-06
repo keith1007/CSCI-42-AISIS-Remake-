@@ -55,6 +55,7 @@ class Student(db.Model):
     is_regular = db.Column(db.Boolean, nullable=False)
     degree = db.Column(db.String(100), nullable=False)
     password = db.Column(db.Text, nullable=False)
+    primary_email = db.Column(EmailType, nullable=False)
     primary_mobile = db.Column(PhoneNumberType, nullable=False)
     secondary_email = db.Column(EmailType, nullable=False)
 
